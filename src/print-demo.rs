@@ -3,7 +3,7 @@ fn print_test() {
         println!("--------demo const declare -----------");
         const C: i32 = 4;
         println!(" {}", C);
-        let mut c1: i32 = 10;
+        let c1: i32 = 10;
         println!(" mux c =  {} {}", C, c1);
     }
     //----------------------------------------
