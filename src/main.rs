@@ -1,6 +1,9 @@
+use std::borrow::{Borrow, BorrowMut};
 include!("print-demo.rs");
 include!("slice-str-demo.rs");
 include!("map-demo.rs");
+include!("vec-demo.rs");
+include!("ownership-demo.rs");
 
 
 fn main() {
@@ -10,6 +13,10 @@ fn main() {
     slice_test();
     //
     map_demo();
+    //
+    vec_test();
+    //
+    ownership_demo();
 }
 
 

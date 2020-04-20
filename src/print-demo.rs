@@ -50,6 +50,7 @@ fn print_test() {
         let y = x;
         println!("x is {}", x);
         println!("x is {}", x);
+        println!("x is {}", y);
     }
     {
         println!("-------demo owner---------------");
