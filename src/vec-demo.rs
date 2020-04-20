@@ -14,8 +14,28 @@ fn vec_test() {
         let t0 = SystemTime::now();
 
         let value = fib(40);
-        println!("{:?},{:?}", SystemTime::now().duration_since(t0).unwrap().as_secs(), value);
-        println!("{:?},{:?}", t0.elapsed().unwrap().as_secs(), value);
+        println!("fir : {:?},{:?}", SystemTime::now().duration_since(t0).unwrap().as_secs(), value);
+        println!("fir : {:?},{:?}", t0.elapsed().unwrap().as_secs(), value);
+    }
+    {
+        println!("----------calc------------");
+        let mut x = 0;
+        for i in 1..3 {
+            x = x + i;
+        }
+        println!(" x = {}", x);
+        println!(" ------------calc end---------- ");
+    }
+    {
+        println!("---------str add-------------");
+        let l = ["aa", "bb", "cc", "dd", "ee", "ff"];
+        let mut r = String::from("");
+        for each in l.iter() {
+            println!("each is : {}", each);
+            let c = r.clone();
+            r = r.add(c.as_ref()).add(each.as_ref());
+        }
+        println!(" str combine is : {}",r);
     }
 
     //-------------------------------------------
