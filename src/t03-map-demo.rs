@@ -1,6 +1,11 @@
+#[test]
+fn t03() {
+    //
+    map_demo();
+}
+
+
 use std::collections::HashMap;
-
-
 fn map_demo() {
     {
         let mut m = HashMap::new();

@@ -1,3 +1,7 @@
+#[test]
+fn t07() {
+    test_struct();
+}
 
 fn test_struct() {
     {

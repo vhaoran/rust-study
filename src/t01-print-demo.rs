@@ -1,3 +1,9 @@
+
+#[test]
+fn t01(){
+    print_test();
+}
+
 fn print_test() {
     {
         println!("--------demo const declare -----------");

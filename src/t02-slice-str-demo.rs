@@ -1,3 +1,8 @@
+#[test]
+fn t02() {
+    slice_test();
+}
+
 fn slice_test() {
     {
         //-------------slice test 1------------------------------

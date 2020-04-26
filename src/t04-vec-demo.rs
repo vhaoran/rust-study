@@ -1,5 +1,10 @@
-use std::time::SystemTime;
+#[test]
+fn t04() {
+    vec_test();
+}
 
+
+use std::time::SystemTime;
 
 fn vec_test() {
     {
@@ -7,6 +12,12 @@ fn vec_test() {
         for each in l.iter() {
             println!("-------------{}---------", each);
         }
+
+        //----------------------------------------
+        for each in l.iter().rev() {
+            println!("-------------{}---------", each);
+        }
+        //----------------------------------------
     }
     //-------------------------------------------
     {
@@ -105,7 +116,6 @@ fn vec_test() {
         // 如果不使用元素的引用来遍历元素。直接遍历的话，vector将会失去那一片内存的控制权
         let v = vec![1, 2, 3, 4, 5];
 
-
         for i in v {   //v将失去这块内存得所有权
             println!("{}", i)
         }
@@ -151,6 +161,11 @@ fn vec_test() {
 }
 
 //-------------------------------------------
+#[test]
+fn test_fib() {
+    let (v, all) = fib(20);
+    println!("a: {} b:{}", v, all);
+}
 
 fn fib(x: i64) -> (i64, i64) {
     let a = &x;
@@ -162,6 +177,9 @@ fn fib(x: i64) -> (i64, i64) {
     let a1 = fib(x - 1);
     let a2 = fib(x - 2);
 
-    (a1.0 + a2.0, a1.1 + a2.1 + 1)
+
+    let v = (a1.0 + a2.0, a1.1 + a2.1 + 1);
+    println!("###  x: {} ->  {} ###", &v.0, &v.1);
+    v
 }
 

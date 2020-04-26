@@ -1,7 +1,7 @@
-//mod test1;
-
-
-
+#[test]
+fn t08() {
+    module_demo1();
+}
 
 mod test1;
 pub use crate::test1::a;

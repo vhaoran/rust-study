@@ -1,3 +1,8 @@
+#[test]
+fn t05() {
+    ownership_demo();
+}
+
 fn ownership_demo() {
     {
         // let a = 2;
@@ -11,7 +16,7 @@ fn ownership_demo() {
         println!(" c is  {} ", c);
 
         fn ch(x: &i32) {
-            println!(" enter ch fn->x = {}",x);
+            println!(" enter ch fn->x = {}", x);
         }
 
         fn changed(x: &mut i32) {
