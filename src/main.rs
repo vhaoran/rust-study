@@ -7,6 +7,7 @@ include!("t03-map-demo.rs");
 include!("t04-vec-demo.rs");
 include!("t05-ownership-demo.rs");
 include!("t07-struct.rs");
+include!("t08-module.rs");
 
 
 fn main() {
@@ -18,6 +19,7 @@ fn main() {
     //
     vec_test();
     test_struct();
+    module_demo1();
 }
 
 
