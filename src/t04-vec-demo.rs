@@ -117,6 +117,7 @@ fn vec_test() {
     }
     {
         // 存储不同类型的元素：vector结合enum
+        #[derive(Debug)]
         enum XCell {
             Int(i32),
             Float(f64),
@@ -128,6 +129,7 @@ fn vec_test() {
             XCell::Text(String::from("blue")),
             XCell::Float(11.12),
         ];
+        println!("{:?}", row);
     }
     {
         assert_eq!(2, 2);
@@ -152,6 +154,7 @@ fn vec_test() {
 
 fn fib(x: i64) -> (i64, i64) {
     let a = &x;
+    println!("{}", a);
     if x < 2 {
         return (x, 1);
     }

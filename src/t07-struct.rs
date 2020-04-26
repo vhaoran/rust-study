@@ -3,7 +3,7 @@ fn test_struct() {
     {
         println!("-----------struct demo-----------");
         let age = 10;
-        let mut bean = Employee {
+        let bean = Employee {
             id: 1,
             name: String::from("no-name"),
             age,
@@ -15,12 +15,12 @@ fn test_struct() {
     {
         println!("-----------struct demo 2-----------");
         let age = 10;
-        let mut bean = Employee {
+        let bean = Employee {
             id: 1,
             name: String::from("no-name"),
             age,
         };
-        let mut bean1 = Employee {
+        let  bean1 = Employee {
             id: 2,
             ..bean
         };

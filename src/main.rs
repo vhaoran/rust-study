@@ -1,4 +1,3 @@
-use std::borrow::{Borrow, BorrowMut};
 use std::ops::Add;
 
 include!("t01-print-demo.rs");
