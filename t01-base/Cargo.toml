@@ -1,5 +1,5 @@
 [package]
-name = "rust-study"
+name = "t01-base"
 version = "0.1.0"
 authors = ["whr"]
 edition = "2018"
