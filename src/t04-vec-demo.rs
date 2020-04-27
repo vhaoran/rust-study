@@ -196,6 +196,56 @@ fn sort_test() {
     println!(" result : {:?}", l);
 }
 
+#[test]
+fn sort_test2() {
+    let mut l: Vec<i64> = vec![1, 20, 13, 8];
+
+    println!("----------------------");
+    println!(" src : {:?}", l);
+    sort2(&mut l);
+    println!("----------------------");
+    println!(" result : {:?}", l);
+}
+
+#[test]
+fn sort_test3() {
+    let mut l: Vec<i64> = vec![1, 20, 13, 8];
+
+    println!("----------------------");
+    println!(" src : {:?}", l);
+    sort2(&mut l);
+    println!("----------------------");
+    println!(" result : {:?}", l);
+}
+
+
+#[allow(dead_code)]
+fn sort2(l: &mut Vec<i64>) {
+    for i in 0..(l.len() - 1) {
+        for j in i..(l.len() - 1) {
+            if l[j] > l[j + 1] {
+                let temp = l[j];
+                l[j] = l[j + 1];
+                l[j + 1] = temp;
+            }
+        }
+    }
+}
+
+#[allow(dead_code)]
+fn sort3(l: &mut Vec<i64>) {
+    for i in 0..(l.len() - 1) {
+        for j in (i + 1)..(l.len() - 1) {
+            if l[i] > l[j] {
+                let temp = l[i];
+                l[i] = l[j];
+                l[j] = temp;
+            }
+        }
+    }
+}
+
+
 #[allow(dead_code)]
 fn sort(l: &mut Vec<i64>) {
     for _i in 0..l.len() {
