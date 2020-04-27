@@ -183,3 +183,34 @@ fn fib(x: i64) -> (i64, i64) {
     v
 }
 
+use std::vec::Vec;
+
+#[test]
+fn sort_test() {
+    let mut l: Vec<i64> = vec![1, 20, 13, 8];
+
+    println!("----------------------");
+    println!(" src : {:?}", l);
+    sort(&mut l);
+    println!("----------------------");
+    println!(" result : {:?}", l);
+}
+
+#[allow(dead_code)]
+fn sort(l: &mut Vec<i64>) {
+    for _i in 0..l.len() {
+        next(l, 0);
+    }
+
+    fn next(l: &mut Vec<i64>, start: usize) {
+        if start >= l.len() - 1 {
+            return;
+        }
+        if l[start] > l[start + 1] {
+            let temp = l[start];
+            l[start] = l[start + 1];
+            l[start + 1] = temp;
+        }
+        next(l, start + 1);
+    }
+}
