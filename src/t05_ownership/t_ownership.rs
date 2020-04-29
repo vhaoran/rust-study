@@ -3,6 +3,7 @@ fn t05() {
     ownership_demo();
 }
 
+#[allow(dead_code)]
 fn ownership_demo() {
     {
         // let a = 2;

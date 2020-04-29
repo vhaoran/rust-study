@@ -90,6 +90,7 @@ fn for_test2() {
     for_result2();
 }
 
+#[allow(dead_code)]
 fn for_result2() {
     let a = {
         let mut b = 0;
