@@ -6,7 +6,6 @@ fn t02() {
 fn slice_test() {
     {
         //-------------slice test 1------------------------------
-
         let s = String::from("0123456789");
         let part1 = &s[0..5];
         let part2 = &s[5..9];

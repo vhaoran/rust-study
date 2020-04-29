@@ -1,9 +1,11 @@
 
+
 #[test]
-fn t01(){
+fn t01() {
     print_test();
 }
 
+#[allow(dead_code)]
 fn print_test() {
     {
         println!("--------demo const declare -----------");
@@ -11,19 +13,6 @@ fn print_test() {
         println!(" {}", C);
         let c1: i32 = 10;
         println!(" mux c =  {} {}", C, c1);
-    }
-    //----------------------------------------
-    println!("--------demo for  -----------");
-    {
-        for i in 0..5 {
-            println!("i = {} ", i);
-        }
-    }
-    {
-        let a = [10, 20, 30, 40, 50];
-        for i in a.iter() {
-            println!("值为 : {}", i);
-        }
     }
     //--------------------------------------
     {

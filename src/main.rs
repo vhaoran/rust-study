@@ -1,25 +1,18 @@
-use std::ops::Add;
+// use std::ops::Add;
 
-include!("t01-print-demo.rs");
-include!("t02-slice-str-demo.rs");
-include!("t03-map-demo.rs");
-include!("t04-vec-demo.rs");
-include!("t05-ownership-demo.rs");
-include!("t07-struct.rs");
-include!("t08-module.rs");
+mod t01;
+mod t02_str;
+mod t03_map;
+mod t04_vec;
+mod t05_ownership;
+mod t06_struct;
+mod t07_sort;
 
 
 fn main() {
     println!("Hello, world!");
-    print_test();
-    slice_test();
-    map_demo();
-    ownership_demo();
-    //
-    vec_test();
-    test_struct();
-    module_demo1();
 }
+
 
 
 
