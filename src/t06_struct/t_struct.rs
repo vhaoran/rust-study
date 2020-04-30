@@ -24,7 +24,7 @@ fn test_struct() {
             name: String::from("no-name"),
             age,
         };
-        let  bean1 = Employee {
+        let bean1 = Employee {
             id: 2,
             ..bean
         };
@@ -52,7 +52,7 @@ struct Employee {
 impl Employee {
     fn to_string(&self) -> String {
         let s = format!("id: {},name: {},age: {}", self.id, self.name, self.age);
-        s.to_string()
+        s
     }
 }
 

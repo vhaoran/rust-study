@@ -7,6 +7,7 @@ mod t04_vec;
 mod t05_ownership;
 mod t06_struct;
 mod t07_sort;
+mod t08_thread;
 
 
 fn main() {
