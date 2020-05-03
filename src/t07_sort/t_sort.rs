@@ -1,37 +1,35 @@
-
-// #[test]
+#[test]
 fn qsort_test() {
+    println!("------------before----------");
+    let mut a = vec![3, 18, 1, 15, 27, 36];
+    println!("{:?}", a);
+    let h = a.len() - 1;
+    q_sort(&mut a, 0, h);
     println!("----------------------");
-    let a = 2;
-    let b = a;
-    let c = a;
-    println!("----------------------");
-    println!("b {},c {}", b, c);
+    println!("{:?}", a);
 }
 
 #[allow(dead_code)]
-fn q_sort(l: &mut Vec<i64>,left:usize,right:usize){
-    let tag = l[left];
-    //
-    let mut low = left;
-    let mut high = right;
-
-    //
-    while low < high{
-        if l[high] < tag{
-            swap(l,high,low)
-        }
-        high.add(-1);
-
-        left.add(1);
-
-
-
+fn q_sort(arr: &mut Vec<u8>, left: usize, right: usize) {
+    if left >= right {
+        return;
     }
-}
 
-fn swap(l: &mut Vec<i64>, a:usize, b:usize){
-    let t = l[a];
-    l[a]  = l[b];
-    l[b] = t;
+    let mut l = left;
+    let mut r = right;
+    while l < r {
+        while l < r && arr[r] >= arr[left] {
+            r -= 1;
+        }
+        while l < r && arr[l] <= arr[left] {
+            l += 1;
+        }
+        arr.swap(l, r);
+    }
+    arr.swap(left, l);
+    if l > 1 {
+        q_sort(arr, left, l - 1);
+    }
+
+    q_sort(arr, r + 1, right);
 }
