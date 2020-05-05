@@ -52,7 +52,7 @@ fn opt_3() {
 
     if v.is_some() {
         println!("v vluue is : {}", v.as_ref().unwrap());
-    }else{
+    } else {
         println!("---------v is none-------------");
     }
     println!("----------------------");
@@ -60,3 +60,22 @@ fn opt_3() {
 
 
 //-------------------------------------------------------------------
+#[test]
+fn option_test4() {
+    option_4();
+}
+
+fn option_4() {
+    println!("----------------------");
+    let a: Result<i64, i64> = Ok(4);
+
+    println!("-------------------{}---", a.unwrap());
+    let r = match get() {
+        Ok(v) => println!("{}", v),
+        Err(e) => println!("{}", e),
+    };
+}
+
+fn get() -> Result<i64, i64> {
+    Ok(18)
+}
