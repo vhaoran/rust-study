@@ -82,3 +82,62 @@ fn own_5() {
 }
 //-------------------------------------------
 
+
+#[test]
+fn own_test6() {
+    own_6()
+}
+
+fn own_6() {
+    let a = 1;
+    let b = 2;
+
+    let c = a + b;
+    let d = c;
+
+    let e = c;
+    println!("e : {}", e);
+
+    println!("a: {} b: {} c:{} d:{}", a, b, c, d);
+    println!("a: {} b: {} c:{} d:{}", a, b, c, d);
+    println!("a: {} b: {} c:{} d:{}", a, b, c, d);
+}
+
+#[test]
+fn own_test7() {
+    own_7()
+}
+
+fn own_7() {
+    let mut a = String::from("aaaaa");
+    let b = &a;
+    let c = &b;
+    //a.push('a');
+
+    println!("----------------------");
+    println!("a: {}", a);
+    println!("a: {} b : {} c: {} ", a, b, c);
+
+    println!("----------------------");
+}
+
+//----------------------------------------
+#[test]
+fn own_test9() {
+    own_9()
+}
+
+fn own_9() {
+    println!("----------------------");
+    let a = get();
+    println!("---------------------{}", a);
+    println!("----------------------");
+
+    fn get() -> String {
+        let a = String::from("aaa");
+        let b = a;
+        b
+    }
+}
+//----------------------------------------
+
