@@ -112,13 +112,14 @@ fn own_7() {
     let mut a = String::from("aaaaa");
     let b = &a;
     let c = &b;
-    //a.push('a');
+
 
     println!("----------------------");
     println!("a: {}", a);
     println!("a: {} b : {} c: {} ", a, b, c);
 
-    println!("----------------------");
+    a.push_str(" this is append value");
+    println!("---------------------{} ---", a);
 }
 
 //----------------------------------------
