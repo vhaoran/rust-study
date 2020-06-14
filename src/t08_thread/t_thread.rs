@@ -13,7 +13,7 @@ fn thread_1() {
     for zid in 0..10 {
         let counter = Arc::clone(&counter);
         let handle = thread::spawn(move || {
-            for k in 0..5 {
+            for _k in 0..5 {
                 let mut num = counter.lock().unwrap();
                 *num += 1;
                 println!(" do num + 1 of  #### {} ####", zid)

@@ -1,5 +1,5 @@
 use std::option::Option;
-use std::iter::Map;
+//use std::iter::Map;
 use std::collections::hash_map::HashMap;
 
 
@@ -70,7 +70,7 @@ fn option_4() {
     let a: Result<i64, i64> = Ok(4);
 
     println!("-------------------{}---", a.unwrap());
-    let r = match get() {
+    let _r = match get() {
         Ok(v) => println!("{}", v),
         Err(e) => println!("{}", e),
     };

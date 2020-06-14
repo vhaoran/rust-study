@@ -1,11 +1,11 @@
-use std::error::Error;
+//use std::error::Error;
 use std::num::ParseIntError;
 
 #[test]
 fn err_test() {
     let a = match err_1() {
         Ok(v) => v,
-        Err(e) => -1000,
+        Err(_e) => -1000,
     };
 
     println!("----------------------");
