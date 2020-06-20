@@ -6,6 +6,7 @@ fn thread_test1() {
 use std::sync::{Mutex, Arc};
 use std::thread;
 
+#[allow(dead_code)]
 fn thread_1() {
     let counter = Arc::new(Mutex::new(0));
     let mut handles = vec![];

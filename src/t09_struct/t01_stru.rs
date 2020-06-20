@@ -7,9 +7,13 @@ struct Abc {
     b: String,
 }
 
+
+#[allow(dead_code)]
 struct Color(i8, i8, i8);
 
+
 impl Abc {
+    #[allow(dead_code)]
     fn to_string(&self) -> String {
         //self.a.clone().add(self.b.clone().as_ref())
         self.a.clone().add(self.b.clone().as_ref())

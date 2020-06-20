@@ -4,6 +4,7 @@ fn count_test1() {
     count_1()
 }
 
+#[allow(dead_code)]
 fn count_1() {
     println!("----------------------");
     let base = 1_000_000_000;

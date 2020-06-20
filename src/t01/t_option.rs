@@ -65,6 +65,7 @@ fn option_test4() {
     option_4();
 }
 
+#[allow(dead_code)]
 fn option_4() {
     println!("----------------------");
     let a: Result<i64, i64> = Ok(4);

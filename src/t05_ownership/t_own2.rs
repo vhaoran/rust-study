@@ -88,6 +88,7 @@ fn own_test6() {
     own_6()
 }
 
+#[allow(dead_code)]
 fn own_6() {
     let a = 1;
     let b = 2;
@@ -108,6 +109,7 @@ fn own_test7() {
     own_7()
 }
 
+#[allow(dead_code)]
 fn own_7() {
     let mut a = String::from("aaaaa");
     let b = &a;
@@ -128,6 +130,7 @@ fn own_test9() {
     own_9()
 }
 
+#[allow(dead_code)]
 fn own_9() {
     println!("----------------------");
     let a = get();

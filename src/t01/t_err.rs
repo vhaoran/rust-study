@@ -12,6 +12,7 @@ fn err_test() {
     println!("{}", a);
 }
 
+#[allow(dead_code)]
 fn err_1() -> Result<i32, ParseIntError> {
     let a = call()?;
     return Ok(a);

@@ -1,6 +1,7 @@
 use std::collections::HashMap;
 use std::string::ToString;
 
+#[allow(dead_code)]
 fn hashmap_test() {
     let mut contacts = HashMap::new();
     for i in 1..10 {
@@ -60,6 +61,8 @@ fn hashmap_test() {
         let mut c = 0;
         for world in text.split_whitespace() {
             let count = hmp.entry(world).or_insert(0);
+
+            println!("---------{}-------------", count);
             c += 1;
         }
         println!("--------count: {}-------------", c);

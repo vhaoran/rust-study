@@ -3,6 +3,7 @@ fn t07() {
     test_struct();
 }
 
+#[allow(dead_code)]
 fn test_struct() {
     {
         println!("-----------struct demo-----------");
@@ -50,6 +51,7 @@ struct Employee {
 
 
 impl Employee {
+    #[allow(dead_code)]
     fn to_string(&self) -> String {
         let s = format!("id: {},name: {},age: {}", self.id, self.name, self.age);
         s

@@ -7,6 +7,7 @@ fn t03() {
 
 use std::collections::HashMap;
 
+#[allow(dead_code)]
 fn map_demo() {
     {
         let mut m = HashMap::new();
