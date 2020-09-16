@@ -12,6 +12,8 @@ mod t08_thread;
 mod t09_struct;
 mod tokio_demo;
 mod smartptr;
+mod t10_file;
+
 
 
 fn main() {
