@@ -1,5 +1,6 @@
 // use std::ops::Add;
 
+mod smartptr;
 mod test1;
 mod t01;
 mod t02_str;
@@ -11,9 +12,8 @@ mod t07_sort;
 mod t08_thread;
 mod t09_struct;
 mod tokio_demo;
-mod smartptr;
 mod t10_file;
-
+mod t11_json;
 
 
 fn main() {

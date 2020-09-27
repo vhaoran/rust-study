@@ -2,12 +2,14 @@
 // use std::intrinsics::atomic_xadd;
 
 #[allow(dead_code)]
+#[test]
 fn box_demo_1() {
     let a = Box::new(3);
     //-------------------------------------------------------------------
 
     println!("----------------------");
     println!("{}", a);
+
     println!("----------------------");
     let b = a.clone();
     println!("b = {}", b);
@@ -15,6 +17,7 @@ fn box_demo_1() {
 }
 
 #[allow(dead_code)]
+#[test]
 fn box_demo_2() {
     let x = 5;
     let y = Box::new(x);
@@ -22,10 +25,25 @@ fn box_demo_2() {
     println!("----------------------");
     assert_eq!(5, x);
     assert_eq!(5, *y);
+
+    if 5 == x {
+        println!(" 5 == x")
+    }
+
+    if 5 == *y {
+        println!(" 5 == *y")
+    }
+
+    match *y {
+        5 => println!(" match  *y == 5"),
+        _ => println!(" *y no match")
+    }
+
     println!("----------------------");
 }
 
 
+#[allow(dead_code)]
 fn box_demo_3() {
     struct Abc {
         a: i8,
@@ -58,6 +76,7 @@ fn box_test2() {
 fn box_test3() {
     box_demo_3();
 }
+
 
 //----------------------------------------
 
