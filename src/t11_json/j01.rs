@@ -1,6 +1,5 @@
 extern crate serde_json;
-
-use std::borrow::Borrow;
+//extern crate serde;
 
 
 #[test]
@@ -9,6 +8,7 @@ fn test_01_json() {
 }
 
 
+#[allow(dead_code)]
 fn f_j01() {
     use serde_json::json;
     let john = json!({
@@ -28,6 +28,7 @@ fn f_j01() {
 
 #[test]
 fn test_j02() {
+    use std::borrow::Borrow;
     use serde_json::{Result, Value, Value::String};
     fn untyped_example() -> Result<()> {
         // Some JSON input data as a &str. Maybe this comes from the user.
@@ -64,3 +65,39 @@ fn test_j02() {
         println!(" --------------");
     }
 }
+
+
+// #[test]
+// fn test_j03() {
+//     use serde_json::{Deserialize, Serialize};
+//     use serde_json::Result;
+//
+//     #[derive(Deserialize, Serialize)]
+//     struct Address {
+//         street: i32,
+//         city: i32,
+//     }
+//
+//     fn print_an_address() -> Result<()> {
+//         // Some data structure.
+//         let address = Address {
+//             street: 1,
+//             city: 3,
+//         };
+//
+//         // Serialize it to a JSON string.
+//         let j = serde_json::to_string(&address)?;
+//
+//         // Print, write to a file, or send to an HTTP server.
+//         println!("----------------------");
+//         println!("{}", j);
+//
+//         Ok(())
+//     }
+//
+//     let a = print_an_address();
+//     if let Ok(()) = a {
+//         println!("0------------exec ok");
+//     }
+// }
+//
