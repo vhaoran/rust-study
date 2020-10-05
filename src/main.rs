@@ -14,6 +14,8 @@ mod t09_struct;
 mod tokio_demo;
 mod t10_file;
 mod t11_json;
+mod t12_toml;
+mod t13_async;
 
 
 fn main() {
