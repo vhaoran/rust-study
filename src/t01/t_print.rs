@@ -1,5 +1,3 @@
-
-
 #[test]
 fn t01() {
     print_test();
@@ -146,5 +144,15 @@ fn print_test() {
         s2.push_str("oob");
         println!("{}", s2);
     }
+}
+
+
+#[test]
+fn tuple_1() {
+    fn x() -> (bool, i32) {
+        (true, 50)
+    }
+    let (a, b) = x();
+    println!("------------{}  {}-------------", a, b);
 }
 
