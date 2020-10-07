@@ -1,5 +1,7 @@
 //use std::borrow::Borrow;
 
+use std::ptr::null;
+
 #[test]
 fn test_fn_1() {
     let mut a: i32 = 33;
@@ -26,4 +28,23 @@ fn fn_2(a: &mut i32, b: &mut i32) {
     *a = bb;
     *b = aa;
 }
+
+#[test]
+fn fn_param() {
+    type F = fn();
+
+    fn a(f: F) {
+        f();
+        println!("------------call f()-------------");
+    }
+
+    fn b() {
+        println!("------------call b-------------");
+    }
+
+    a(b);
+    a(b);
+    a(b);
+}
+
 
