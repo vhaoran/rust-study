@@ -60,3 +60,14 @@ fn fmt_1() {
     let s = format!(r#"{{"uname":"{}"  }}"#, aaa);
     println!("----{}-------", s);
 }
+
+#[test]
+fn fmt_2() {
+    let jwt = "test/1";
+    let body = format!(r#"{{
+          "jwt": "{}"
+        }}"#,jwt);
+    println!("-------------------------");
+    println!("------------{}-------------", body);
+}
+

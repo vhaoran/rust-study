@@ -16,6 +16,8 @@ mod t10_file;
 mod t11_json;
 mod t12_toml;
 mod t13_async;
+mod t14_log;
+mod t15_yaml;
 
 
 fn main() {
