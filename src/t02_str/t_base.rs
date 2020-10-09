@@ -1,4 +1,6 @@
-use std::ops::Index;
+#[allow(unused_imports)]
+#[allow(dead_code)]
+
 use std::collections::HashMap;
 
 #[test]
@@ -77,6 +79,8 @@ fn t_get_params() {
 }
 
 #[test]
+#[allow(unused_imports)]
+#[allow(dead_code)]
 fn url_pwd_get_1() {
     let url = "ws://whr:123@127.0.0.1:9999";
     let z = get_user_pwd_of_url(url);
@@ -87,7 +91,8 @@ fn url_pwd_get_1() {
     }
 }
 
-
+#[allow(unused_imports)]
+#[allow(dead_code)]
 fn get_user_pwd_of_url(url: &str) -> Option<(String, String)> {
     let l: Vec<_> = url.split("//").collect();
     if l.len() < 2 {
@@ -106,6 +111,8 @@ fn get_user_pwd_of_url(url: &str) -> Option<(String, String)> {
     Some((l[0].to_string(), l[1].to_string()))
 }
 
+#[allow(unused_imports)]
+#[allow(dead_code)]
 fn get_prefix_of_url(url: &str) -> Option<String> {
     let l: Vec<_> = url.split("?").collect();
     if l.len() < 2 {
@@ -114,6 +121,8 @@ fn get_prefix_of_url(url: &str) -> Option<String> {
     Some(l[0].to_string())
 }
 
+#[allow(unused_imports)]
+#[allow(dead_code)]
 fn get_params_of_url(url: &str) -> Option<HashMap<String, String>> {
     let l: Vec<_> = url.split("?").collect();
     if l.len() < 2 {

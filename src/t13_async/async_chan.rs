@@ -1,6 +1,10 @@
+#[allow(unused_imports)]
+#[allow(dead_code)]
 use std::sync::mpsc::SyncSender;
 
 #[test]
+#[allow(unused_imports)]
+#[allow(dead_code)]
 fn async_chan_1() {
     //    use futures::executor::block_on;
     use async_std::{
@@ -11,6 +15,8 @@ fn async_chan_1() {
         //prelude::*,
         // Future或输入输出流
     };
+    #[allow(unused_imports)]
+    #[allow(dead_code)]
     use std::sync::mpsc::{channel, sync_channel};
     use std::thread;
     use std::time;
@@ -21,7 +27,7 @@ fn async_chan_1() {
 
         let s = format!("--test3---{}----{}--", task::current().id(),
                         time::UNIX_EPOCH.elapsed().unwrap().as_secs());
-        tx.send(s);
+        let _r = tx.send(s);
         1 + 2
     }
 
@@ -42,6 +48,8 @@ use once_cell::sync::OnceCell;
 use std::collections::HashMap;
 use std::sync::{Arc, Mutex};
 
+#[allow(unused_imports)]
+#[allow(dead_code)]
 pub fn global_data() -> &'static Arc<Mutex<HashMap<i64, String>>> {
     static INSTANCE: OnceCell<Arc<Mutex<HashMap<i64, String>>>> = OnceCell::new();
     INSTANCE.get_or_init(|| {
@@ -55,7 +63,12 @@ pub fn global_data() -> &'static Arc<Mutex<HashMap<i64, String>>> {
 
 
 #[test]
+#[allow(unused_imports)]
+#[allow(dead_code)]
 fn async_once_cell_1() {
+    #[allow(unused_imports)]
+    #[allow(dead_code)]
+
     //    use futures::executor::block_on;
     use async_std::{
         // fs::File,
@@ -65,17 +78,22 @@ fn async_once_cell_1() {
         //prelude::*,
         // Future或输入输出流
     };
+
+    #[allow(unused_imports)]
+    #[allow(dead_code)]
     use std::sync::mpsc::{channel, sync_channel};
     use std::thread;
     use std::time;
 
     let (tx, rx) = sync_channel::<String>(0);
+    #[allow(unused_imports)]
+    #[allow(dead_code)]
     async fn test3(tx: SyncSender<String>) -> i32 {
         println!("-----test3 exec-->async exec---------------");
 
         let s = format!("--test3---{}----{}--", task::current().id(),
                         time::UNIX_EPOCH.elapsed().unwrap().as_secs());
-        tx.send(s.clone());
+        let _r = tx.send(s.clone());
 
         let x = Arc::clone(global_data());
         let mut m = x.lock().unwrap();
@@ -99,7 +117,7 @@ fn async_once_cell_1() {
     for i in rx.iter() {
         println!("------------{}-------------", i);
         let x = Arc::clone(global_data());
-        let mut m = x.lock().unwrap();
+        let m = x.lock().unwrap();
         println!("------------{}-------------", m.len());
     }
 }

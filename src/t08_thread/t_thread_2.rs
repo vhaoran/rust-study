@@ -1,7 +1,14 @@
+#[allow(unused_imports)]
+#[allow(dead_code)]
 use std::sync::mpsc::sync_channel;
 
 #[test]
+#[allow(unused_imports)]
+#[allow(dead_code)]
 fn channel_1() {
+    #[allow(unused_imports)]
+    #[allow(dead_code)]
+
     use std::thread;
     // use std::sync::mpsc::sync_channel;
     use std::time;

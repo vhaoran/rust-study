@@ -1,6 +1,5 @@
 //use std::borrow::Borrow;
 
-use std::ptr::null;
 
 #[test]
 fn test_fn_1() {

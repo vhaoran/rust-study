@@ -2,14 +2,15 @@
 fn test_workdir() {
     use std::env;
 
-    fn get() -> std::io::Result<()> {
-        let path = env::current_dir()?;
+    fn get() -> Option<String> {
+        let path = env::current_dir().unwrap();
+
         println!("The current directory is {}", path.display());
-        Ok(())
+        Some(path.to_str().unwrap().to_string())
     }
 
     let r = get();
-    if let Ok(()) = r {
-        println!("  ok ,get workdir")
+    if let Some(s) = r {
+        println!("  ok ,get workdir,  {} ----------", s)
     }
 }

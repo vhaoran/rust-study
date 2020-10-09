@@ -1,0 +1,5 @@
+# 这是websock服务，注意 ，不是徽服务
+ws_port = "8888"
+ws_send_pwd = "password"
+auth_url = ["http://127.0.0.1:9110/InnerJwt"]
+
