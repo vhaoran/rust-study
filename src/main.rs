@@ -1,5 +1,7 @@
 // use std::ops::Add;
 
+use std::time::Duration;
+
 mod smartptr;
 mod test1;
 mod t01;
@@ -46,8 +48,9 @@ fn main() {
                 println!("-{}-----{}-",
                          std::time::UNIX_EPOCH.elapsed().unwrap().as_millis(),
                          msg);
-                task::sleep(std::time::Duration::new(60, 0));
-                out.close(CloseCode::Normal)
+                // task::sleep(Duration::from_secs(1));
+                // out.close(CloseCode::Normal)
+                Ok(())
             }
         }).is_err() {
             println!(" ********************connection error ****************")
