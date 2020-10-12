@@ -4,4 +4,12 @@ target/
 .idea/
 .git/
 *.iml
+main
+
+*.log
+*.js
+*.html
+*.htm
+*.txt
+*.out
 

@@ -34,3 +34,7 @@ urlencoding = "1.1.1"
 
 tokio = { version = "0.2", features = ["full"] }
 
+#cache
+cache = "0.2.0"
+cached = "0.19.0"
+

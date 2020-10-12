@@ -18,8 +18,10 @@ mod t12_toml;
 mod t13_async;
 mod t14_log;
 mod t15_yaml;
+mod t16_cache;
 
-use std::thread::{park_timeout, sleep};
+
+// use std::thread::{park_timeout, sleep};
 
 fn main() {
     use async_std::{
@@ -32,7 +34,7 @@ fn main() {
         println!("-------------------------");
         extern crate ws;
 
-        use ws::{Builder, Sender, Settings};
+        use ws::{Sender, Settings};
 
         let url = format!("ws://0755yicai.com:8083/ws?jwt=test|{}", uid);
         use ws::{connect, CloseCode};
@@ -44,7 +46,7 @@ fn main() {
                 println!("-{}-----{}-",
                          std::time::UNIX_EPOCH.elapsed().unwrap().as_millis(),
                          msg);
-                task::sleep(std::time::Duration::new(60, 10_000));
+                task::sleep(std::time::Duration::new(60, 0));
                 out.close(CloseCode::Normal)
             }
         }).is_err() {
@@ -53,14 +55,11 @@ fn main() {
     }
 
     loop {
-        for i in 0..900_000_000 {
-            task::spawn(f(i as u64));
-            std::thread::sleep(std::time::Duration::new(0, 1000_000));
+        for i in 0..1000000 {
+            task::spawn(f(i % 1000 as u64));
+            for _k in 0..1000 {
+                std::thread::sleep(std::time::Duration::new(0, 1_000_000));
+            }
         }
-    }
-
-    loop {
-        println!("------------loop---{}--", std::time::UNIX_EPOCH.elapsed().unwrap().as_millis());
-        std::thread::sleep(std::time::Duration::new(0, 1_000_000))
     }
 }
