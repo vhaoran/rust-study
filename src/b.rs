@@ -7,7 +7,7 @@ extern crate time;
 // use std::time;
 use ws::{Builder, CloseCode, Handler, Handshake, Message, Result, Sender, Settings};
 
-const CONNECTIONS: usize = 10_000;
+const CONNECTIONS: usize = 3_000;
 // simultaneous
 const MESSAGES: u32 = 10;
 static MESSAGE: &'static str = "ping";
