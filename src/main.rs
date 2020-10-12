@@ -44,7 +44,7 @@ fn main() {
                 println!("-{}-----{}-",
                          std::time::UNIX_EPOCH.elapsed().unwrap().as_millis(),
                          msg);
-                task::sleep(std::time::Duration::new(60, 10_000));
+                task::sleep(std::time::Duration::new(60, 0));
                 out.close(CloseCode::Normal)
             }
         });
@@ -53,12 +53,12 @@ fn main() {
     loop {
         for i in 0..900_000_000 {
             task::spawn(f(i as u64));
-            // std::thread::sleep(std::time::Duration::new(0, 1000_000));
+            std::thread::sleep(std::time::Duration::new(0, 1000_000));
         }
     }
 
     loop {
         println!("------------loop---{}--", std::time::UNIX_EPOCH.elapsed().unwrap().as_millis());
-        std::thread::sleep(std::time::Duration::new(1, 0))
+        std::thread::sleep(std::time::Duration::new(0, 1_000_000))
     }
 }
