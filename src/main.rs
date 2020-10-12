@@ -48,7 +48,7 @@ fn main() {
                 out.close(CloseCode::Normal)
             }
         }).is_err() {
-            println!(" connection error")
+            println!(" ********************connection error ****************")
         }
     }
 
