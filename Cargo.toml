@@ -10,6 +10,7 @@ edition = "2018"
 log = "0.4"
 simplelog = "0.8.0"
 
+ws = { git = "https://github.com/housleyjk/ws-rs.git" }
 
 toml = "0.5"
 toml-parse = "0.2.11"
