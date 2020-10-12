@@ -64,6 +64,7 @@ pub fn test_b() {
         let s = format!("ws://0755yicai.com:8083/ws?jwt=test|{}", id);
         let url = url::Url::parse(s.as_str()).unwrap();
         ws.connect(url.clone()).unwrap();
+        println!("----{}---",id);
     }
     let start = time::precise_time_ns();
     ws.run().unwrap();
