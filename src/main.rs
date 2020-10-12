@@ -37,17 +37,19 @@ fn main() {
         let url = format!("ws://0755yicai.com:8083/ws?jwt=test|{}", uid);
         use ws::{connect, CloseCode};
 
-        connect(url, |out| {
+        if connect(url, |out| {
             out.send("ping").unwrap();
 
             move |msg| {
                 println!("-{}-----{}-",
                          std::time::UNIX_EPOCH.elapsed().unwrap().as_millis(),
                          msg);
-                task::sleep(std::time::Duration::new(60, 0));
+                task::sleep(std::time::Duration::new(60, 10_000));
                 out.close(CloseCode::Normal)
             }
-        });
+        }).is_err() {
+            println!(" connection error")
+        }
     }
 
     loop {
