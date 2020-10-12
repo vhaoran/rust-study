@@ -55,11 +55,9 @@ fn main() {
     }
 
     loop {
-        for i in 0..1000000 {
+        for i in 0..10000 {
             task::spawn(f(i % 1000 as u64));
-            for _k in 0..1000 {
-                std::thread::sleep(std::time::Duration::new(0, 1_000_000));
-            }
+            std::thread::sleep(std::time::Duration::new(0, 1_000_000));
         }
     }
 }
