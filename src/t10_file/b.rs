@@ -5,7 +5,6 @@ use std::borrow::Borrow;
 fn file_t_2() {
     let dir = std::env::current_dir().unwrap();
     println!("------------{}-------------", dir.display());
-    //
 
     let p = Path::new(dir.to_str().unwrap());
 

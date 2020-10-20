@@ -17,6 +17,7 @@ mod t13_async;
 mod t14_log;
 mod t15_yaml;
 mod t17_trait;
+mod t18_iron;
 
 mod a;
 mod b;
