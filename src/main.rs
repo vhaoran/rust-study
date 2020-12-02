@@ -18,6 +18,7 @@ mod t14_log;
 mod t15_yaml;
 mod t17_trait;
 mod t18_iron;
+mod t19_generic;
 
 mod a;
 mod b;
