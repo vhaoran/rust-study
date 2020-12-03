@@ -44,7 +44,7 @@ fn vec_test() {
         for each in l.iter() {
             println!("each is : {}", each);
             let c = r.clone();
-            r = r.add(c.as_ref()).add(each.as_ref());
+            r.push_str(each)
         }
         println!(" str combine is : {}", r);
     }
