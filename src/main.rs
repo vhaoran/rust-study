@@ -19,6 +19,7 @@ mod t15_yaml;
 mod t17_trait;
 mod t18_iron;
 mod t19_generic;
+mod t20_enum;
 
 mod a;
 mod b;

@@ -1,4 +1,5 @@
 mod simplelog_1;
+mod log4rs_1;
 
 
 pub fn test_log() {
