@@ -1,5 +1,8 @@
 extern crate async_std;
 
+use self::async_std::task::JoinHandle;
+use std::ops::Add;
+
 
 #[test]
 fn async_a() {
@@ -13,10 +16,13 @@ fn async_a() {
         // Future或输入输出流
     };
 
-    task::block_on(async {
+    let a = task::block_on(async {
         println!("-------------------------");
         println!("Hello, world!");
-    })
+        "----async result----".to_string()
+    });
+
+    println!("----async_a.rs---result is :  {}", a);
 }
 
 
@@ -77,3 +83,59 @@ fn async_3() {
     let sec = time::Duration::from_secs(2);
     thread::sleep(sec);
 }
+
+#[test]
+fn async_t_01() {
+    use async_std::{
+        // fs::File,
+        // 支持异步操作的文件结构体
+        task,
+        // 调用调度器
+        //prelude::*,
+        // Future或输入输出流
+    };
+    async fn x(i: u32) -> String {
+        println!("----async_a.rs-id:  {} --i: {} ---", task::current().id(), i);
+        task::sleep(std::time::Duration::from_secs(1)).await;
+
+        "xxx".to_string()
+    }
+
+    for i in 0..10 {
+        task::spawn(x(i));
+    }
+
+    println!("--##############################-----------");
+    std::thread::sleep(std::time::Duration::from_secs(2));
+}
+
+#[test]
+fn async_t_02() {
+    use async_std::{
+        // fs::File,
+        // 支持异步操作的文件结构体
+        task,
+        // 调用调度器
+        //prelude::*,
+        // Future或输入输出流
+    };
+    async fn x(i: u32) -> String {
+        println!("-----async_a.rs--i:  {} -------", i);
+        println!("----async_a.rs-id:  {} -----", task::current().id());
+        "xxx".to_string()
+    }
+
+    // let b = x(100).await;
+    let z = task::spawn(x(100));
+    // task::spawn_blocking(x(200));
+    async fn y(h: JoinHandle<String>) -> String {
+        let r = h.await;
+        r.add("---good")
+    }
+
+    let y = task::block_on(y(z));
+    println!("----async_a.rs--y: {}-----", y);
+
+    println!("--##############################-----------");
+}
+
