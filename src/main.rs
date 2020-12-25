@@ -20,6 +20,7 @@ mod t17_trait;
 mod t18_iron;
 mod t19_generic;
 mod t20_enum;
+mod t21_other;
 
 mod a;
 mod b;
