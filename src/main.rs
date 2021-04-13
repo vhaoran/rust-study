@@ -23,6 +23,7 @@ mod t18_iron;
 mod t19_generic;
 mod t20_enum;
 mod t21_other;
+mod t22_err;
 
 
 

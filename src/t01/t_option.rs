@@ -80,3 +80,31 @@ fn option_4() {
 fn get() -> Result<i64, i64> {
     Ok(18)
 }
+
+#[test]
+fn a_q_mark() {
+    fn f(i :i32)->Option<i32>{
+        if i < 0{
+            None
+        }else{
+            Some(3)
+        }
+    }
+    //
+    fn b(i:i32)->Option<i32>{
+        let i = f(i)?;
+        if i > 5{
+            Some(1)
+        }else{
+            Some(0)
+        }
+    }
+
+    let z = b(6).unwrap_or(-1);
+
+    println!("----t_option.rs---a---{}--" ,z);
+}
+
+
+
+

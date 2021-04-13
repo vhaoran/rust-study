@@ -1,11 +1,13 @@
+use std::time::SystemTime;
+use std::vec::Vec;
+
 #[test]
 fn t04() {
     vec_test();
 }
 
-
-use std::time::SystemTime;
-
+#[allow(unused_imports)]
+#[allow(dead_code)]
 fn vec_test() {
     {
         let l = [1, 2, 3];
@@ -43,7 +45,7 @@ fn vec_test() {
         let mut r = String::from("");
         for each in l.iter() {
             println!("each is : {}", each);
-            let c = r.clone();
+            let _c = r.clone();
             r.push_str(each)
         }
         println!(" str combine is : {}", r);
@@ -167,6 +169,8 @@ fn test_fib() {
     println!("a: {} b:{}", v, all);
 }
 
+#[allow(unused_imports)]
+#[allow(dead_code)]
 fn fib(x: i64) -> (i64, i64) {
     let a = &x;
     println!("{}", a);
@@ -182,8 +186,6 @@ fn fib(x: i64) -> (i64, i64) {
     println!("###  x: {} ->  {} ###", &v.0, &v.1);
     v
 }
-
-use std::vec::Vec;
 
 #[test]
 fn sort_test() {

@@ -2,9 +2,12 @@ extern crate log;
 extern crate simplelog;
 
 
-use log::*;
+ use log::*;
+#[allow(unused_imports)]
+#[allow(dead_code)]
 use simplelog::*;
-
+#[allow(unused_imports)]
+#[allow(dead_code)]
 use std::fs::File;
 
 #[test]

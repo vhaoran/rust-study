@@ -1,3 +1,6 @@
+#[allow(unused_imports)]
+#[allow(dead_code)]
+
 #[test]
 fn unit_drop_01() {
     //usage of drop
@@ -19,7 +22,7 @@ fn unit_drop_01() {
 
 #[test]
 fn unit_02() {
-    let mut letters = vec![
+    let  letters = vec![
         "a", "b", "b"
     ];
 

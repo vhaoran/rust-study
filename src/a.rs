@@ -1,13 +1,17 @@
+#[allow(unused_imports)]
+#[allow(dead_code)]
+
 extern crate async_std;
 extern crate env_logger;
 extern crate ws;
 extern crate log;
 
-
+#[allow(unused_imports)]
+#[allow(dead_code)]
 fn a() {
     use async_std::{
         task,
-        prelude::*,
+        // prelude::*,
         // Future或输入输出流
     };
 
@@ -15,7 +19,7 @@ fn a() {
         println!("-------------------------");
         extern crate ws;
 
-        use ws::{Sender, Settings};
+        // use ws::{Sender, Settings};
 
         let url = format!("ws://0755yicai.com:8083/ws?jwt=test|{}", uid);
         use ws::{connect, CloseCode};
@@ -30,9 +34,9 @@ fn a() {
                 //
                 // task::block_on(task::sleep(Duration::from_secs(60)));
                 for i in 0..10000 {
-                    println!("ww");
+                    println!("ww {}" ,i);
                 }
-                out.close(CloseCode::Normal);
+                let _r = out.close(CloseCode::Normal);
                 Ok(())
             }
         }).is_err() {

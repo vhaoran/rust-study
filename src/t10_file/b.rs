@@ -1,5 +1,7 @@
-use std::path::{Path, PathBuf};
+#[allow(unused_imports)]
+#[allow(dead_code)]
 use std::borrow::Borrow;
+use std::path::{Path, PathBuf};
 
 #[test]
 fn file_t_2() {

@@ -1,6 +1,7 @@
 // extern crate yaml;
 extern crate yaml_rust;
-
+#[allow(unused_imports)]
+#[allow(dead_code)]
 use yaml_rust::{YamlLoader, YamlEmitter};
 
 #[test]

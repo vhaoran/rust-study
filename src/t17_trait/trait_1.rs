@@ -1,6 +1,6 @@
 #[test]
 fn tt_01() {
-    pub trait XT {
+    pub trait XTrait {
         fn abs(&self) -> usize;
         fn abt(&self) -> usize;
     }
@@ -35,7 +35,7 @@ fn tt_01() {
         }
     }
 
-    impl XT for XTChild {
+    impl XTrait for XTChild {
         fn abs(&self) -> usize {
             println!("----enter abs--------");
             6

@@ -11,6 +11,7 @@ fn cache_t_1() {
     use cached::SizedCache;
 
 
+    _
     /// Defines a function named `fib` that uses a cache explicitly named `FIB`.
     /// By default this will be the function in all caps.
     /// The following line is equivalent to #[cached(name = "FIB", unbound)]

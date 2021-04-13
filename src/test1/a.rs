@@ -11,7 +11,8 @@ fn hello_test_1() {
     hello();
 }
 
-
+#[allow(unused_imports)]
+#[allow(dead_code)]
 use ws::{Builder, Sender, Settings};
 
 #[test]

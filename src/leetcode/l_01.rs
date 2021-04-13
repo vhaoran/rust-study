@@ -2,7 +2,7 @@
 
 
 
-use std::ops::Add;
+// use std::ops::Add;
 #[test]
 fn a_1_test() {
     //---------------------
@@ -12,6 +12,8 @@ fn a_1_test() {
     println!("----l_01.rs---{}--" ,a);
 }
 
+#[allow(unused_imports)]
+#[allow(dead_code)]
 fn  call(s : &str)->bool{
     let mut u:i32 = 0;
     let mut l:i32 = 0;

@@ -1,6 +1,6 @@
 #[test]
 fn hashset_t_01() {
-    use std::cmp::Ordering;
+    // use std::cmp::Ordering;
     use std::collections::HashSet;
     use std::fmt::{Debug, Formatter};
     use std::hash::{Hash, Hasher};
@@ -30,6 +30,7 @@ fn hashset_t_01() {
         }
 
         fn my_eq(&self, other: &dyn MyTrait) -> bool {
+            println!("----hashset_1.rs-----{}---" ,other.my_hash());
             true
         }
         fn my_fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {

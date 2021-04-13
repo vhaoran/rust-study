@@ -1,3 +1,6 @@
+#[allow(unused_imports)]
+#[allow(dead_code)]
+
 extern crate url;
 extern crate ws;
 extern crate env_logger;
@@ -34,6 +37,7 @@ pub fn test_b() {
 
         fn on_message(&mut self, msg: Message) -> Result<()> {
             //assert_eq!(msg.as_text().unwrap(), MESSAGE);
+            println!("----b.rs--------{}" ,msg);
             if self.count > MESSAGES {
                 self.out.close(CloseCode::Normal)?;
             } else {
@@ -66,11 +70,13 @@ pub fn test_b() {
         ws.connect(u).unwrap();
         println!("----{}---", id);
     }
-    let start = time::precise_time_ns();
+    let start = std::time::SystemTime::now();
     ws.run().unwrap();
 
     println!(
         "Total time. {}",
-        (time::OffsetDateTime::now_utc().timestamp() as u64 - start) / 1_000_000
+        std::time::SystemTime::now().duration_since(start).unwrap_or(
+            std::time::Duration::from_secs(5)
+        ).as_millis()
     )
 }

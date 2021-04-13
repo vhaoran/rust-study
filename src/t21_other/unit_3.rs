@@ -1,3 +1,6 @@
+#[allow(unused_imports)]
+#[allow(dead_code)]
+
 #[test]
 fn u_1() {
     struct Animal {

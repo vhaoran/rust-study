@@ -1,4 +1,5 @@
 mod trait_1;
+mod trait_2;
 
 
 #[test]

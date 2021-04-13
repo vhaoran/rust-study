@@ -17,3 +17,10 @@ fn gen_01() {
     println!("----gen_1.rs---{}-----", a);
     println!("----gen_1.rs---{}-----", x);
 }
+
+#[test]
+fn gen_2() {
+    println!("----gen_1.rs--------");
+}
+
+

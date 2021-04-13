@@ -1,3 +1,6 @@
+#[allow(unused_imports)]
+#[allow(dead_code)]
+
 #[test]
 fn enum_t_01() {
     let r: Result<i32, ()> = Ok(3);
@@ -8,6 +11,10 @@ fn enum_t_01() {
     }
     //
 }
+
+
+#[allow(unused_imports)]
+#[allow(dead_code)]
 
 #[test]
 fn enum_t_02() {

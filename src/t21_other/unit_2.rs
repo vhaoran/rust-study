@@ -1,8 +1,11 @@
+#[allow(unused_imports)]
+#[allow(dead_code)]
+
 #[test]
 fn unit_0() {
     use regex;
-    #[macro_use]
-    use lazy_static::lazy_static;
+    // #[macro_use]
+    // use lazy_static::lazy_static;
 
     #[cfg(target_os = "windows")]
     const NL: &'static str = "\r\n";
@@ -44,13 +47,15 @@ fn unit_0() {
         wrapped
     }
 
-    #[test]
+    // #[test]
     fn test_empty_input_is_unaffected() {
         let result = word_wrap("", 80);
         assert_eq!(result, "");
     }
 
-    #[test]
+    // #[test]
+    #[allow(unused_imports)]
+    #[allow(dead_code)]
     fn test_long_lines_are_wrapped() {
         let line = "A relatively long line of text that should wrap at a word boundary.";
         let expected = "A relatively long line of
@@ -60,7 +65,7 @@ word boundary. ";
         assert_eq!(expected, result);
     }
 
-    #[test]
+    // #[test]
     fn test_paragraphs_are_treated_independently() {
         let line = "\
 A sequence of paragraphs.
