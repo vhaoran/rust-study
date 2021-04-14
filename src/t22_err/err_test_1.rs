@@ -17,7 +17,6 @@ fn file_len(p :String)->Result<usize,String>{
 
 #[test]
 fn err_map_1() {
-
    let path = std::env::current_dir().unwrap();
     println!("The current directory is {}", path.display());
    let path = "./readme.md".to_string();

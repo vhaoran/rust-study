@@ -1,12 +1,15 @@
-#[test]
-fn test_tk_task1() {
-    use tokio::task;
+use std::time::Duration;
 
-    let result = task::block_in_place(|| {
-        // do some compute-heavy work or call synchronous code
-        "blocking completed"
-    });
-    assert_eq!(result, "blocking completed");
+use tokio::task;
+
+#[tokio::test]
+async fn test_tk_task1() {
+    task::spawn(async{
+        println!("----tk_02.rs--------");
+    }).await;
+
+    println!("-----------");
+    std::thread::sleep(Duration::from_secs(3));
 }
 
 
