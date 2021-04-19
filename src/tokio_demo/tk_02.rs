@@ -4,7 +4,7 @@ use tokio::task;
 
 #[tokio::test]
 async fn test_tk_task1() {
-    task::spawn(async{
+    let _a = task::spawn(async{
         println!("----tk_02.rs--------");
     }).await;
 

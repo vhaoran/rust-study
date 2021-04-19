@@ -1,6 +1,7 @@
 // use std::ops::Add;
 mod leetcode;
 mod redis_test;
+mod deadpool_test;
 
 
 mod test1;

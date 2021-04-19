@@ -53,3 +53,9 @@ regex = "1.4.2"
 lazy_static = "1.4.0"
 # redis
 redisclient = "*"
+# dead-pool
+deadpool = "0.7.0"
+
+# rabbit mq
+# amiquip = {version = "0.4", default-features = false,git = "https://github.com/jgallagher/amiquip.git"  }
+#ws = { git = "https://github.com/housleyjk/ws-rs.git" }
