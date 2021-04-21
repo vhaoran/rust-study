@@ -2,6 +2,8 @@
 mod leetcode;
 mod redis_test;
 mod deadpool_test;
+mod a_mod_cmn;
+
 
 
 mod test1;
