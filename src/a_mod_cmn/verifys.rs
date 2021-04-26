@@ -1,11 +1,13 @@
 
 
+
 use std::fmt::{Debug, Display};
 
 pub trait NotEmpty{
     fn not_empty<T>(&self,str:&str,data:Option<T>)->Self;
 }
 
+#[derive(Clone)]
 pub struct Verify{
    on_err_stop:bool,
    errs: Vec<String>,
@@ -35,25 +37,16 @@ impl Debug for Verify{
           .finish()
    }
 }
-impl Clone for Verify{
-   fn clone(&self) -> Self {
-      Verify{
-         on_err_stop:self.on_err_stop,
-         errs:self.errs.clone(),
-      }
-   }
-}
-
 
 impl Verify{
-   pub fn new(on_err_stop:bool)->Self{
+   pub fn new(on_err_stop:bool)->Verify{
       Verify{
          errs:std::vec::Vec::new(),
          on_err_stop,
       }
    }
 
-   pub fn gt<T>(&self,info:&str,n1:&T,n2:&T)->Self
+   pub fn gt<T>(&self,info:&str,n1:&T,n2:&T)->Verify
       where T: PartialOrd  {
       use std::cmp::Ordering;
       let mut r = self.clone();
@@ -61,9 +54,10 @@ impl Verify{
       if n1.le(n2){
           r.errs.push(info.to_string());
       }
-      r
+      r.to_owned()
    }
-   pub fn gte<T>(&self,info:&str,n1:&T,n2:&T)->Self
+
+   pub fn gte<T>(&self,info:&str,n1:&T,n2:&T)->Verify
       where T: PartialOrd  {
       use std::cmp::Ordering;
       let mut r = self.clone();
@@ -71,10 +65,10 @@ impl Verify{
       if n1.lt(n2){
           r.errs.push(info.to_string());
       }
-      r
+      r.to_owned()
    }
 
-   pub fn lt<T>(&self,info:&str,n1:&T,n2:&T)->Self
+   pub fn lt<T>(&self,info:&str,n1:&T,n2:&T)->Verify
       where T: PartialOrd  {
       use std::cmp::Ordering;
       let mut r = self.clone();
@@ -82,9 +76,9 @@ impl Verify{
       if n1.ge(n2){
           r.errs.push(info.to_string());
       }
-      r
+      r.to_owned()
    }
-   pub fn lte<T>(&self,info:&str,n1:&T,n2:&T)->Self
+   pub fn lte<T>(&self,info:&str,n1:&T,n2:&T)->Verify
       where T: PartialOrd  {
       use std::cmp::Ordering;
       let mut r = self.clone();
@@ -92,25 +86,34 @@ impl Verify{
       if n1.gt(n2){
           r.errs.push(info.to_string());
       }
-      r
+      r.to_owned()
    }
 
-   pub fn fn_true(&self,info:&str,b :bool)->Self {
+   pub fn fn_true(&self,info:&str,b :bool)->Verify {
       let mut r = self.clone();
       if !b{
          r.errs.push(info.to_string());
       }
-      r
+      r.to_owned()
    }
 
-   pub fn fn_no_err(&self,input :Result<(),String>)->Self {
+   pub fn fn_no_err(&self,input :Result<(),String>)->Verify {
       let mut r = self.clone();
       if input.is_err() {
          if let Err(e) = input{
             r.errs.push(e);
          }
       }
-      r
+      r.to_owned()
+   }
+
+   fn func<F>(&self,f: F) -> Verify
+      where F : Fn() -> Result<(),String> {
+      let mut r = self.clone();
+      if let Err(e) = f(){
+         r.errs.push(e);
+      }
+      r.to_owned()
    }
 
 }
@@ -123,7 +126,6 @@ fn v_1() {
         .gt("float should greater than 10" ,&1f32 ,&10f32)
         .fn_no_err(Err("something is wrong!!!!".to_string()))
         ;
-
 
     println!("-----verifys.rs---------{:?}--" ,r);
 }
