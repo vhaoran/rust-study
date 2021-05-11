@@ -26,3 +26,27 @@ fn t_err_3() {
     r_1();
     println!("----i32 return passed-----");
 }
+
+
+#[test]
+fn a_t_map() {
+    //---------------------
+    fn f()->Option<i32>{
+        Some(5)
+    }
+
+    let a = f().map(|x|x+1).unwrap_or(-1);
+
+    f().map_or()
+    println!("----err_test_3.rs---a----{}-" ,a);
+}
+
+#[test]
+fn a_filter_option() {
+    fn f()->Option<i32>{
+        Some(5)
+    }
+
+    let a = f().filter(|x|return *x > 3);
+    println!("----err_test_3.rs---a----{:?}-" ,a);
+}
