@@ -37,7 +37,6 @@ fn a_t_map() {
 
     let a = f().map(|x|x+1).unwrap_or(-1);
 
-    f().map_or()
     println!("----err_test_3.rs---a----{}-" ,a);
 }
 

@@ -25,3 +25,35 @@ fn slice_test() {
         println!(" c =  {}", a);
     }
 }
+
+#[test]
+fn a_str_mult() {
+    println!(r#"--b"12上海"-------"#);
+    let a = b"12";
+    for i in a.iter(){
+        println!("--------{}-" ,i);
+    };
+    //-------------------------------------
+    println!(r#"--"12上海"-------"#);
+    let a = "12上海";
+    for i in a.as_bytes().iter(){
+        println!("--------{}-" ,i);
+    }
+    //-----------a--------------------------
+    println!(r#"--"12上海"-------"#);
+    let a = r"12上海";
+    for i in a.as_bytes().iter(){
+        println!("--------{}-" ,i);
+    }
+    //-----------a--------------------------
+
+
+}
+
+#[test]
+fn a_bool() {
+    //---------------------
+    let a: bool = false;
+    println!("----t_slice_str.rs---b---{}--" ,a);
+}
+
