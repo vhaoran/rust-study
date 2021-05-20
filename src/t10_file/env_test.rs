@@ -17,7 +17,7 @@ fn test_workdir() {
 }
 
 #[test]
-fn a_t{
+fn a_t(){
 
 
 }
