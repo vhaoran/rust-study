@@ -123,7 +123,7 @@ fn v_1() {
     let r = Verify::new(false)
         .gt("" ,&1u8 ,&0u8)
         .gt("int should greater than 10" ,&1u8 ,&10u8)
-        .gt("float should greater than 10" ,&1f32 ,&10f32)
+        .gt("float should gre ater than 10" ,&1f32 ,&10f32)
         .fn_no_err(Err("something is wrong!!!!".to_string()))
         ;
 
