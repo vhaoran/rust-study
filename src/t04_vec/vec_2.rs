@@ -18,7 +18,22 @@ fn ve_01() {
             println!("---{}------", ss);
             ()
         }
-        _ => ()
+        _ => (),
     }
     // println!("----vec_2.rs---{}-----", s);
+}
+
+#[test]
+fn t_vec_find() {
+    //---------------------
+    let mut l: Vec<i32> = Vec::new();
+    l.push(1);
+    l.push(4);
+    l.push(5);
+    let r = l.iter().find(|&&x| x == 3);
+    println!("----------------------");
+    println!("fihnd 3: {:?}", r);
+    let r = l.iter().find(|&&x| x == 4);
+    println!("-----------a-----------");
+    println!("fihnd 4: {:?}", r);
 }

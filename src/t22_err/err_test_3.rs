@@ -1,23 +1,21 @@
-
-
 #[test]
 fn t_err_3() {
-    fn r()->Result<(),String>{
-       a()?;
-       b()?;
+    fn r() -> Result<(), String> {
+        a()?;
+        b()?;
         Ok(())
     }
 
-    fn r_1()->Result<i32,String>{
-       a()?;
-       b()?;
-       Ok(1i32)
+    fn r_1() -> Result<i32, String> {
+        a()?;
+        b()?;
+        Ok(1i32)
     }
 
-    fn a()->Result<u32,String>{
+    fn a() -> Result<u32, String> {
         Ok(1u32)
     }
-    fn b()->Result<i32,String>{
+    fn b() -> Result<i32, String> {
         Ok(1i32)
     }
 
@@ -27,25 +25,31 @@ fn t_err_3() {
     println!("----i32 return passed-----");
 }
 
-
 #[test]
 fn a_t_map() {
     //---------------------
-    fn f()->Option<i32>{
+    fn f() -> Option<i32> {
         Some(5)
     }
 
-    let a = f().map(|x|x+1).unwrap_or(-1);
+    let a = f().map(|x| x + 1).unwrap_or(-1);
 
-    println!("----err_test_3.rs---a----{}-" ,a);
+    println!("----err_test_3.rs---a----{}-", a);
 }
 
 #[test]
 fn a_filter_option() {
-    fn f()->Option<i32>{
+    fn f() -> Option<i32> {
         Some(5)
     }
 
-    let a = f().filter(|x|return *x > 3);
-    println!("----err_test_3.rs---a----{:?}-" ,a);
+    let a = f().filter(|x| return *x > 3);
+    println!("----err_test_3.rs---a----{:?}-", a);
+}
+
+#[test]
+fn t_opt_1() {
+    let a: Option<i32> = None;
+    let r = a.map_or_else(|| Err("error ".to_string()), |_x| Ok("good".to_string()));
+    println!("result: {:?}", r);
 }
