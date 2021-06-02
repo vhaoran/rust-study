@@ -1,6 +1,7 @@
 pub mod a;
 pub mod b;
 pub mod map_test;
+mod test_ajson;
 
 #[allow(dead_code)]
 pub fn hello() {
