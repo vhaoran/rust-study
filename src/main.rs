@@ -32,6 +32,7 @@ mod tokio_demo;
 
 mod a;
 mod b;
+mod macro_test;
 
 // use std::thread::{park_timeout, sleep};
 fn main() {
