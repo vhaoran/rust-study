@@ -53,3 +53,14 @@ fn t_opt_1() {
     let r = a.map_or_else(|| Err("error ".to_string()), |_x| Ok("good".to_string()));
     println!("result: {:?}", r);
 }
+
+#[test]
+fn err_link_1() {
+    let r: Result<i32, String> = Ok(3);
+    r.map_err(|e| {
+        println!("error is occur {}", e.to_string());
+    })
+    .map(|_| {
+        println!("ok doing....");
+    });
+}
