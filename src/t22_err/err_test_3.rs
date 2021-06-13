@@ -64,3 +64,13 @@ fn err_link_1() {
         println!("ok doing....");
     });
 }
+
+#[test]
+fn str_1() {
+    let s = "good morning";
+    let c = s.replace("g", "a");
+    println!("-----------a-----------");
+
+    println!(" {}", s);
+    println!(" {}", c);
+}
