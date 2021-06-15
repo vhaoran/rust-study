@@ -74,3 +74,26 @@ fn str_1() {
     println!(" {}", s);
     println!(" {}", c);
 }
+
+#[test]
+fn opt_2() {
+    //---------------------
+    let s = r#" try after 256" "#;
+    let r = s.rfind("after");
+    println!("-----------S----{}----", s);
+    println!(" index : {:?}", r);
+
+    let v: Vec<&str> = s.split(" ").collect();
+    println!("-----------r----{:?}----", v);
+    for s in v.iter().rev() {
+        let str = s.clone().trim().replace("\"", "").replace("(", "");
+        println!(" {:?}", str);
+        let n_str: Vec<_> = str.matches(char::is_numeric).collect();
+        println!("     n_str {:?}", n_str);
+        if n_str.len() > 0 {
+            if str.parse::<i32>().unwrap_or(0) > 0 {
+                println!("           *** {}", str);
+            }
+        }
+    }
+}
