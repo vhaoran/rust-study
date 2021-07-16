@@ -9,6 +9,7 @@ fn hashset_t_01() {
         let hs = HashSet::new();
         hs.union(&hss);
     }
+
     trait MyTrait {
         fn method(&self);
 

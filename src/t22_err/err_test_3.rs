@@ -97,3 +97,18 @@ fn opt_2() {
         }
     }
 }
+
+#[test]
+fn x() {
+    //---------------------
+    let mut a = 3;
+    let b = {
+        // let mut a = 4;
+        a = 5;
+        println!(" a inner a : {:?}", a);
+        a + 1
+    };
+
+    println!("  a : {:?}", a);
+    println!("  a : {:?}", b);
+}

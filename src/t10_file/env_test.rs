@@ -4,6 +4,9 @@ fn test_workdir() {
 
     fn get() -> Option<String> {
         let path = env::current_dir().unwrap();
+        let a = 3;
+
+
 
         println!("The current directory is {}", path.display());
         Some(path.to_str().unwrap().to_string())
