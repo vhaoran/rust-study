@@ -52,7 +52,7 @@ fn do_for() {
     }
     {
         let cities = ["Toronto", "New York", "Melbourne"];
-        let populations = [2_615_060, 8_550_405, ‎4_529_500];
+        let populations = [2_615_060, 8_550_405, 4_529_500];
 
         let matrix = cities.iter().zip(populations.iter());
 
@@ -105,3 +105,12 @@ fn for_result2() {
     println!("a = for result is : {}", a);
 }
 
+#[test]
+fn div_floor_1() {
+    //---------------------
+    let i = 60i32;
+    let c = i / 7;
+    println!("----------------------");
+
+    println!(" {:?}", c);
+}
