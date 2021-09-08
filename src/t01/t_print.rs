@@ -107,7 +107,7 @@ fn print_test() {
         fn takes_and_gives_back(a_string: String) -> String {
             // a_string 被声明有效
 
-            a_string  // a_string 被当作返回值移出函数
+            a_string // a_string 被当作返回值移出函数
         }
     }
     //-----reference and borrow--------------------------------------
@@ -146,7 +146,6 @@ fn print_test() {
     }
 }
 
-
 #[test]
 fn tuple_1() {
     fn x() -> (bool, i32) {
@@ -170,4 +169,11 @@ fn loop_0() {
     //---------------------------------------
     println!("----t_print.rs--------");
     println!("----t_print.rs---{}-----", x);
+}
+
+#[test]
+fn f_1_1() {
+    //---------------------
+    let f = 1.23345f64;
+    println!("-----------{:0.2}-----------", f);
 }
