@@ -37,3 +37,16 @@ fn t_vec_find() {
     println!("-----------a-----------");
     println!("fihnd 4: {:?}", r);
 }
+
+#[test]
+fn v_7() {
+    let mut l = vec![1, 2, 3, 4];
+
+    let i = 1;
+    l.insert(i, -1);
+    println!("-----------{:?}-----------", l);
+    l.remove(i + 1);
+    println!("--remvoe ---------{:?}-----------", l);
+    l[i] = 44444;
+    println!("--remvoe ---------{:?}-----------", l);
+}

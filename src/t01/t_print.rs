@@ -180,8 +180,16 @@ fn f_1_1() {
 
 #[test]
 fn let_1() {
-    if let a = 1 {
-        println!("-----------ok-----------");
+    let a = "s".to_string();
+    let b = "s".to_string();
+    if a.as_bytes().eq(b.as_bytes()) {
+        println!("-----------equal-----------");
     }
     println!("-----------end-----------");
+
+    let i = 36i128.pow(15);
+    println!("-------sec:----{}-----------", i);
+    let year = i / (86400 * 365 * 1000000000);
+    println!("---------year:--{}-----------", year);
+    println!("---------year-secs:--{}-----------", 86400 * 365);
 }
