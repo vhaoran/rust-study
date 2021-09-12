@@ -192,17 +192,25 @@ fn let_1() {
     let year = i / (86400 * 365 * 1000000000);
     println!("---------year:--{}-----------", year);
     println!("---------year-secs:--{}-----------", 86400 * 365);
-
-
-
 }
 
 #[test]
 fn a_z_1() {
     //---------------------
-    for c in 'A'..'Z'{
-        println!("-----------{}-----------",c);
-        println!("-----to_string------{}-----------",c.to_string());
+    for c in 'A'..'Z' {
+        println!("-----------{}-----------", c);
+        println!("-----to_string------{}-----------", c.to_string());
     }
 }
 
+#[test]
+fn std_in_1() {
+    let mut line = String::new();
+    println!("请输入你的名字:");
+    let b1 = std::io::stdin().read_line(&mut line).unwrap();
+    let s = line.replace("\n", "");
+    println!("你好 , /{}/", s);
+    println!("读取的字节数为：{}", b1);
+    println!(" s.len()：{}", s.len());
+    println!(" line.len()：{}", line.len());
+}
