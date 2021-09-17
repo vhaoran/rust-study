@@ -5,7 +5,7 @@ mod test_ajson;
 
 #[allow(dead_code)]
 pub fn hello() {
-    println!(" hello of test::a:hello");
+    println!(" hello of test::aa:hello");
 }
 
 #[test]

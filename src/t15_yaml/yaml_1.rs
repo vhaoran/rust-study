@@ -16,7 +16,7 @@ bar:
 ";
     let docs = YamlLoader::load_from_str(s).unwrap();
 
-    // Multi document support, doc is a yaml::Yaml
+    // Multi document support, doc is aa yaml::Yaml
     let doc = &docs[0];
 
     // Debug support
@@ -36,7 +36,7 @@ bar:
     {
         let mut emitter = YamlEmitter::new(&mut out_str);
         emitter.dump(doc).unwrap();
-        // dump the YAML object to a String
+        // dump the YAML object to aa String
     }
 
     println!("{}", out_str);

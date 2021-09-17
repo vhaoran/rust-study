@@ -15,7 +15,7 @@ fn unit_0() {
 
     fn word_wrap(original: &str, wrap_at: usize) -> String {
         let paragraphs = regex::Regex::new(r"(\r?\n\s?+\r?\n|\u{2029})")
-            .expect("malformed regular expression"); // create a
+            .expect("malformed regular expression"); // create aa
 
         let mut wrapped = String::with_capacity(original.len()); //
 
@@ -57,9 +57,9 @@ fn unit_0() {
     #[allow(unused_imports)]
     #[allow(dead_code)]
     fn test_long_lines_are_wrapped() {
-        let line = "A relatively long line of text that should wrap at a word boundary.";
+        let line = "A relatively long line of text that should wrap at aa word boundary.";
         let expected = "A relatively long line of
-text that should wrap at a
+text that should wrap at aa
 word boundary. ";
         let result = word_wrap(line, 30);
         assert_eq!(expected, result);

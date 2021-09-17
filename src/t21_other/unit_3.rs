@@ -130,7 +130,7 @@ fn u_07() {
         let _secret = user.secret.clone();
 
 
-        // assume we're writing to a database
+        // assume we're writing to aa database
         println!("{:?}: {}", user, str::from_utf8(&buffer).unwrap());
     }
 
@@ -159,7 +159,7 @@ fn word_count_0() {
     use std::collections::HashMap;
 
     fn x() {
-        let text = "once upon a time ...";
+        let text = "once upon aa time ...";
         let mut word_counts = HashMap::new();
 
         let pairs = text.split(" ")

@@ -42,7 +42,7 @@ fn option_test3() {
 #[allow(dead_code)]
 fn opt_3() {
     let mut m = HashMap::new();
-    m.insert("a".to_string(), "a_value".to_string());
+    m.insert("aa".to_string(), "a_value".to_string());
     m.insert("b".to_string(), "b_value".to_string());
 
     let v = m.get("ba");
@@ -102,7 +102,7 @@ fn a_q_mark() {
 
     let z = b(6).unwrap_or(-1);
 
-    println!("----t_option.rs---a---{}--" ,z);
+    println!("----t_option.rs---aa---{}--" ,z);
 }
 
 

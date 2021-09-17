@@ -23,6 +23,6 @@ fn r_1() {
     c.expire(k.to_string(),24*3600);
 
     let r:String = c.get(k.to_string()).unwrap_or("".to_string());
-    println!("----r_1.rs---a--{:#?}" ,r);
+    println!("----r_1.rs---aa--{:#?}" ,r);
 }
 

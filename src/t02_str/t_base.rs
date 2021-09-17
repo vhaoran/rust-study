@@ -9,10 +9,10 @@ fn test_str() {
     let b = a.clone();
     let c = b.clone();
 
-    println!("a: {} b: {}", a, b);
-    println!("a: {} b: {}", a, b);
-    println!("a: {} b: {}", a, b);
-    println!("a: {} b: {}", a, b);
+    println!("aa: {} b: {}", a, b);
+    println!("aa: {} b: {}", a, b);
+    println!("aa: {} b: {}", a, b);
+    println!("aa: {} b: {}", a, b);
     println!("s: {} ", c);
     println!("s: {} ", c);
     println!("s: {} ", c);
@@ -43,13 +43,13 @@ fn int_owner_1() {
 #[test]
 fn str_2() {
     let s = "abc";
-    let b = s.starts_with("a");
+    let b = s.starts_with("aa");
     println!("------------{}-------------", b);
     println!("------contains Of-b-----{}-------------",
-             s.contains("a"));
+             s.contains("aa"));
 
-    println!("------find Of-a---index--{}-------------",
-             s.find("a").unwrap());
+    println!("------find Of-aa---index--{}-------------",
+             s.find("aa").unwrap());
     println!("------find Of-ba--index---{}-------------",
              match s.find("ba") {
                  Some(v) => format!("{}", v),

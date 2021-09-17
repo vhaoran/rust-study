@@ -6,7 +6,7 @@ fn t05() {
 #[allow(dead_code)]
 fn ownership_demo() {
     {
-        // let a = 2;
+        // let aa = 2;
         let mut c = 3;
         ch(&mut c);
         println!("### c is {} ,no changed", c);

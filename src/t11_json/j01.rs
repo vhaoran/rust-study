@@ -22,7 +22,7 @@ fn f_j01() {
 
     println!("first phone number: {}", john["phones"][0]);
 
-    // Convert to a string of JSON and print it out
+    // Convert to aa string of JSON and print it out
     println!("{}", john.to_string());
 }
 
@@ -31,7 +31,7 @@ fn test_j02() {
     use std::borrow::Borrow;
     use serde_json::{Result, Value, Value::String};
     fn untyped_example() -> Result<()> {
-        // Some JSON input data as a &str. Maybe this comes from the user.
+        // Some JSON input data as aa &str. Maybe this comes from the user.
         let data = r#"
         {
             "name": "John Doe",
@@ -61,7 +61,7 @@ fn test_j02() {
     let a = untyped_example();
 
     if let Ok(()) = a {
-        println!(" ok of a");
+        println!(" ok of aa");
         println!(" --------------");
     }
 }
@@ -85,18 +85,18 @@ fn test_j02() {
 //             city: 3,
 //         };
 //
-//         // Serialize it to a JSON string.
+//         // Serialize it to aa JSON string.
 //         let j = serde_json::to_string(&address)?;
 //
-//         // Print, write to a file, or send to an HTTP server.
+//         // Print, write to aa file, or send to an HTTP server.
 //         println!("----------------------");
 //         println!("{}", j);
 //
 //         Ok(())
 //     }
 //
-//     let a = print_an_address();
-//     if let Ok(()) = a {
+//     let aa = print_an_address();
+//     if let Ok(()) = aa {
 //         println!("0------------exec ok");
 //     }
 // }

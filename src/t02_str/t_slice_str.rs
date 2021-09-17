@@ -20,7 +20,7 @@ fn slice_test() {
         let a = String::from("good bye");
         let mut c = String::new();
         c.push_str(a.as_str());
-        c.push_str("---l am a str");
+        c.push_str("---l am aa str");
         println!(" c =  {}", c);
         println!(" c =  {}", a);
     }
@@ -39,13 +39,13 @@ fn a_str_mult() {
     for i in a.as_bytes().iter(){
         println!("--------{}-" ,i);
     }
-    //-----------a--------------------------
+    //-----------aa--------------------------
     println!(r#"--"12上海"-------"#);
     let a = r"12上海";
     for i in a.as_bytes().iter(){
         println!("--------{}-" ,i);
     }
-    //-----------a--------------------------
+    //-----------aa--------------------------
 
 
 }

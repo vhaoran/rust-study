@@ -4,14 +4,14 @@ pub struct User {
 }
 unsafe impl Send for User {}
 
-//-----------a--------------------------
+//-----------aa--------------------------
 #[derive(Debug, Clone)]
 pub struct R {
     pub data: String,
 }
 // unsafe impl Send for R {}
 
-//-----------a--------------------------
+//-----------aa--------------------------
 #[derive(Debug)]
 pub struct RErr(String);
 impl std::error::Error for RErr {}
@@ -23,7 +23,7 @@ impl std::fmt::Display for RErr {
     }
 }
 
-//-----------a--------------------------
+//-----------aa--------------------------
 pub async fn f(i: i32) -> R {
     println!("-----------f() enter-----------");
     if i > 0 {
@@ -43,7 +43,7 @@ pub async fn f2() -> bool {
 
 #[tokio::test]
 async fn tk_5() -> Result<(), Box<dyn std::error::Error>> {
-    //-----------a--------------------------
+    //-----------aa--------------------------
     tokio::spawn(async move {
         let r = f(0).await;
 
@@ -55,7 +55,7 @@ async fn tk_5() -> Result<(), Box<dyn std::error::Error>> {
 }
 #[tokio::test]
 async fn tk_52() -> Result<(), Box<dyn std::error::Error>> {
-    //-----------a--------------------------
+    //-----------aa--------------------------
     tokio::spawn(async move {
         let r = f2().await;
         tokio::time::sleep(std::time::Duration::from_millis(1)).await;

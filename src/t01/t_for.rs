@@ -80,9 +80,9 @@ fn for_result() {
         }
     };
 
-    println!("a = for result is : {}", a);
-    println!("a = for result is : {}", a);
-    println!("a = for result is : {}", a);
+    println!("aa = for result is : {}", a);
+    println!("aa = for result is : {}", a);
+    println!("aa = for result is : {}", a);
 }
 
 #[test]
@@ -100,9 +100,9 @@ fn for_result2() {
         b
     };
 
-    println!("a = for result is : {}", a);
-    println!("a = for result is : {}", a);
-    println!("a = for result is : {}", a);
+    println!("aa = for result is : {}", a);
+    println!("aa = for result is : {}", a);
+    println!("aa = for result is : {}", a);
 }
 
 #[test]

@@ -34,7 +34,7 @@ fn a_t_map() {
 
     let a = f().map(|x| x + 1).unwrap_or(-1);
 
-    println!("----err_test_3.rs---a----{}-", a);
+    println!("----err_test_3.rs---aa----{}-", a);
 }
 
 #[test]
@@ -44,7 +44,7 @@ fn a_filter_option() {
     }
 
     let a = f().filter(|x| return *x > 3);
-    println!("----err_test_3.rs---a----{:?}-", a);
+    println!("----err_test_3.rs---aa----{:?}-", a);
 }
 
 #[test]
@@ -68,8 +68,8 @@ fn err_link_1() {
 #[test]
 fn str_1() {
     let s = "good morning";
-    let c = s.replace("g", "a");
-    println!("-----------a-----------");
+    let c = s.replace("g", "aa");
+    println!("-----------aa-----------");
 
     println!(" {}", s);
     println!(" {}", c);
@@ -103,12 +103,12 @@ fn x() {
     //---------------------
     let mut a = 3;
     let b = {
-        // let mut a = 4;
+        // let mut aa = 4;
         a = 5;
-        println!(" a inner a : {:?}", a);
+        println!(" aa inner aa : {:?}", a);
         a + 1
     };
 
-    println!("  a : {:?}", a);
-    println!("  a : {:?}", b);
+    println!("  aa : {:?}", a);
+    println!("  aa : {:?}", b);
 }

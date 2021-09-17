@@ -99,9 +99,9 @@ fn own_6() {
     let e = c;
     println!("e : {}", e);
 
-    println!("a: {} b: {} c:{} d:{}", a, b, c, d);
-    println!("a: {} b: {} c:{} d:{}", a, b, c, d);
-    println!("a: {} b: {} c:{} d:{}", a, b, c, d);
+    println!("aa: {} b: {} c:{} d:{}", a, b, c, d);
+    println!("aa: {} b: {} c:{} d:{}", a, b, c, d);
+    println!("aa: {} b: {} c:{} d:{}", a, b, c, d);
 }
 
 #[test]
@@ -117,8 +117,8 @@ fn own_7() {
 
 
     println!("----------------------");
-    println!("a: {}", a);
-    println!("a: {} b : {} c: {} ", a, b, c);
+    println!("aa: {}", a);
+    println!("aa: {} b : {} c: {} ", a, b, c);
 
     a.push_str(" this is append value");
     println!("---------------------{} ---", a);

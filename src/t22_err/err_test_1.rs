@@ -2,10 +2,10 @@
 fn err_1(){
    println!("----abc-----");
 
-   let path = "./a.txt".to_string();
+   let path = "./aa.txt".to_string();
 
    let i = file_len(path).unwrap_or(0);
-   println!("----err_test_1.rs---a  len is {}-----" ,i);
+   println!("----err_test_1.rs---aa  len is {}-----" ,i);
 }
 
 
@@ -22,7 +22,7 @@ fn err_map_1() {
    let path = "./readme.md".to_string();
 
    let i = file_len_of_map(path);
-   println!("----err_test_1.rs---a  len is {:#?}-----" ,i);
+   println!("----err_test_1.rs---aa  len is {:#?}-----" ,i);
 }
 
 fn file_len_of_map(p :String)->Result<usize,String>{

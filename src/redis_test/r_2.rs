@@ -14,9 +14,9 @@ fn red_2() {
     // stream can be anything that implements read and write
     let mut client = Connection::new(host, port, stream);
 
-    // send a request
+    // send aa request
     let _ = client.send_raw_request("SET FOO1 BAR");
-    // or use a supported command
+    // or use aa supported command
     client.set("whr", "whr_value");
 
     let r = client.get("FOO1").unwrap();

@@ -5,6 +5,7 @@ mod deadpool_test;
 // use std::ops::Add;
 mod leetcode;
 mod redis_test;
+mod smartptr;
 
 mod t01;
 mod t02_str;
@@ -31,6 +32,7 @@ mod test1;
 mod tokio_demo;
 
 mod a;
+mod aa;
 mod b;
 mod macro_test;
 

@@ -59,3 +59,6 @@ redis_rs = "0.9"
 deadpool = "0.7.0"
 
 ajson = "^0.2"
+
+flume = "^0.10"
+crossbeam-channel = "^0.5"

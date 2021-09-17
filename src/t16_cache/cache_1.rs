@@ -12,7 +12,7 @@ fn cache_t_1() {
 
 
     _
-    /// Defines a function named `fib` that uses a cache explicitly named `FIB`.
+    /// Defines aa function named `fib` that uses aa cache explicitly named `FIB`.
     /// By default this will be the function in all caps.
     /// The following line is equivalent to #[cached(name = "FIB", unbound)]
     #[cached]
@@ -22,7 +22,7 @@ fn cache_t_1() {
         fib(n - 1) + fib(n - 2)
     }
 
-    /// Use an lru cache with size 100 and a `(String, String)` cache key
+    /// Use an lru cache with size 100 and aa `(String, String)` cache key
     #[cached(size = 100)]
     fn keyed(a: String, b: String) -> usize {
         println!("------------keyed called-------------");
@@ -32,11 +32,11 @@ fn cache_t_1() {
     }
 
 
-    /// Use an explicit cache-type with a custom creation block and custom cache-key generating block
+    /// Use an explicit cache-type with aa custom creation block and custom cache-key generating block
     #[cached(
     type = "SizedCache<String, usize>",
     create = "{ SizedCache::with_size(100) }",
-    convert = r#"{ format!("{}{}", a, b) }"#
+    convert = r#"{ format!("{}{}", aa, b) }"#
     )]
     fn keyed2(a: &str, b: &str) -> usize {
         println!("------------keyed2 called-------------");

@@ -3,8 +3,8 @@ fn c_1() {
     //---------------------
     let s = "中国人民解放军";
     for i in s.chars() {
-        println!("-----------a------{}-----", i);
-        println!("-----------a------{:X}-----", i as u32);
+        println!("-----------aa------{}-----", i);
+        println!("-----------aa------{:X}-----", i as u32);
     }
 }
 
@@ -14,7 +14,7 @@ fn c_2() {
     let c = '>';
     for i in c as u32..(c as u32 + 10) {
         let cc = char::from_u32(i).unwrap_or('n');
-        println!("-----------a------{}-----", cc);
+        println!("-----------aa------{}-----", cc);
         println!("--------{:X}-----", cc as u32);
     }
 }

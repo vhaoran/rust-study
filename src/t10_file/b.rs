@@ -10,7 +10,7 @@ fn file_t_2() {
 
     let p = Path::new(dir.to_str().unwrap());
 
-    let p = p.join(PathBuf::from("a.txt"));
+    let p = p.join(PathBuf::from("aa.txt"));
     //
     println!("------after join filename------{}-------------", p.display());
 }

@@ -31,7 +31,7 @@ mod tests {
 
         let obj0 = pool.get().await.unwrap();
         let status = pool.status();
-        println!("----d_1.rs---a----{:?}-" ,status);
+        println!("----d_1.rs---aa----{:?}-" ,status);
         assert_eq!(status.size, 1);
         assert_eq!(status.available, 0);
 

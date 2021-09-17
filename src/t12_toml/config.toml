@@ -2,4 +2,4 @@
 ws_port = "8888"
 ws_send_pwd = "password"
 auth_url = ["http://127.0.0.1:9110/InnerJwt"]
-
+crossbeam_channel = "^0.5"

@@ -34,7 +34,7 @@ fn t_vec_find() {
     println!("----------------------");
     println!("fihnd 3: {:?}", r);
     let r = l.iter().find(|&&x| x == 4);
-    println!("-----------a-----------");
+    println!("-----------aa-----------");
     println!("fihnd 4: {:?}", r);
 }
 

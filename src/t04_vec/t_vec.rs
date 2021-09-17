@@ -166,7 +166,7 @@ fn vec_test() {
 #[test]
 fn test_fib() {
     let (v, all) = fib(20);
-    println!("a: {} b:{}", v, all);
+    println!("aa: {} b:{}", v, all);
 }
 
 #[allow(unused_imports)]

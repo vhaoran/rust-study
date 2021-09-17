@@ -2,7 +2,7 @@
 #[test]
 fn a_r_1() {
     fn f()->Result<i32,String>{
-        Err("a".to_string())
+        Err("aa".to_string())
     }
 
     fn b()->Result<i32,String>{
