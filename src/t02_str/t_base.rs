@@ -1,6 +1,5 @@
 #[allow(unused_imports)]
 #[allow(dead_code)]
-
 use std::collections::HashMap;
 
 #[test]
@@ -45,16 +44,19 @@ fn str_2() {
     let s = "abc";
     let b = s.starts_with("aa");
     println!("------------{}-------------", b);
-    println!("------contains Of-b-----{}-------------",
-             s.contains("aa"));
+    println!("------contains Of-b-----{}-------------", s.contains("aa"));
 
-    println!("------find Of-aa---index--{}-------------",
-             s.find("aa").unwrap());
-    println!("------find Of-ba--index---{}-------------",
-             match s.find("ba") {
-                 Some(v) => format!("{}", v),
-                 _ => "not found".to_string(),
-             });
+    println!(
+        "------find Of-aa---index--{}-------------",
+        s.find("aa").unwrap()
+    );
+    println!(
+        "------find Of-ba--index---{}-------------",
+        match s.find("ba") {
+            Some(v) => format!("{}", v),
+            _ => "not found".to_string(),
+        }
+    );
 }
 
 #[test]
@@ -136,8 +138,9 @@ fn get_params_of_url(url: &str) -> Option<HashMap<String, String>> {
     for i in ll.iter() {
         let l2: Vec<_> = i.split("=").collect();
         if l2.len() == 2 {
-            m.insert(l2.get(0).unwrap().to_string(),
-                     l2.get(1).unwrap().to_string(),
+            m.insert(
+                l2.get(0).unwrap().to_string(),
+                l2.get(1).unwrap().to_string(),
             );
             b = true;
         }
@@ -146,5 +149,23 @@ fn get_params_of_url(url: &str) -> Option<HashMap<String, String>> {
     match b {
         true => Some(m),
         _ => None,
+    }
+}
+
+#[test]
+fn split_1() {
+    //---------------------
+    let s = "abc:12345";
+    for v in s.split(":") {
+        println!("-----------v : {}-----------", v);
+    }
+    //
+    let l: Vec<_> = s.split(":").collect();
+    for v in l.iter() {
+        println!("-----------{:?}-----------", v);
+    }
+    //
+    if l.len() > 0 {
+        println!("------0:--{}--------------", l[0]);
     }
 }
