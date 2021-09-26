@@ -33,3 +33,23 @@ fn t_option_2() {
     println!("-------------------------");
 }
 
+#[test]
+fn c_2() {
+    //---------------------
+    let s = "abc中国|/,.";
+    //
+    let l = s.chars();
+    let mut count = 0usize;
+    for v in l{
+        if (v >= 'a' && v <= 'z') ||
+            (v >= 'A' && v <= 'Z') ||
+            "/|,.;".contains(v)
+            {
+            count += 1;
+                continue;
+        }
+        count += 2;
+    }
+    println!("-----------c {}-----------",count);
+    println!("-----------s: {}-----------",s);
+}
