@@ -22,7 +22,6 @@ fn str_test_contains() {
     println!("-------------------------");
 }
 
-
 #[test]
 fn t_option_2() {
     let a = Some(Some(1));
@@ -40,16 +39,34 @@ fn c_2() {
     //
     let l = s.chars();
     let mut count = 0usize;
-    for v in l{
-        if (v >= 'a' && v <= 'z') ||
-            (v >= 'A' && v <= 'Z') ||
-            "/|,.;".contains(v)
-            {
+    for v in l {
+        if (v >= 'a' && v <= 'z') || (v >= 'A' && v <= 'Z') || "/|,.;".contains(v) {
             count += 1;
-                continue;
+            continue;
         }
         count += 2;
     }
-    println!("-----------c {}-----------",count);
-    println!("-----------s: {}-----------",s);
+    println!("-----------c {}-----------", count);
+    println!("-----------s: {}-----------", s);
+}
+
+#[test]
+fn eq_1() {
+    //---------------------
+    let s = "a".to_string();
+    if s == "a".to_string() {
+        println!("-----------eq-----------");
+    }
+    println!("----------------------");
+    let s = "a";
+    if s == "a" {
+        println!("-----------eq-----------");
+    }
+    println!("----------------------");
+
+    let a = 1i32;
+    let b = 1i32;
+    if a == b{
+        println!("-----------a == b (i32)-----------");
+    }
 }
