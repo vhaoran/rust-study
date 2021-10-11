@@ -55,6 +55,8 @@ lazy_static = "1.4.0"
 redisclient = "*"
 redis_rs = "0.9"
 
+
+chrono = "^0.4.19"
 # dead-pool
 deadpool = "0.7.0"
 

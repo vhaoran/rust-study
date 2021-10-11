@@ -66,7 +66,35 @@ fn eq_1() {
 
     let a = 1i32;
     let b = 1i32;
-    if a == b{
+    if a == b {
         println!("-----------a == b (i32)-----------");
+    }
+}
+
+#[test]
+fn for_1() {
+    fn get() -> &'static str {
+        "good"
+    }
+    fn get_i32() -> i32 {
+        25i32
+    }
+
+    //---------------------
+    for i in 0..1 {
+        println!("-----------{}-----------", i);
+        println!("-----------{}-----------", get());
+        println!("-----------{}-----------", get_i32());
+    }
+}
+
+#[test]
+fn gb2312_disp() {
+    let start = '中' as u32;
+    // for i in 0xB0A1_u32..0xF7FE_u32 {
+    for i in start..start + 2000 {
+        let c = char::from_u32(i).unwrap_or('n');
+        let s = format!("{}", c);
+        println!("-----------{}-----------", s);
     }
 }
