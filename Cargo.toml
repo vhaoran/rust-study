@@ -64,3 +64,6 @@ ajson = "^0.2"
 
 flume = "^0.10"
 crossbeam-channel = "^0.5"
+clap = "^2.33"
+structopt = "0.3.23"
+

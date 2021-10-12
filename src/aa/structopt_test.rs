@@ -1,41 +1,3 @@
-mod a_mod_cmn;
-mod deadpool_test;
-#[allow(unused_imports)]
-#[allow(dead_code)]
-// use std::ops::Add;
-mod leetcode;
-mod redis_test;
-mod smartptr;
-
-mod t01;
-mod t02_str;
-mod t03_map;
-mod t04_vec;
-mod t05_ownership;
-mod t06_struct;
-mod t07_sort;
-mod t08_thread;
-mod t09_struct;
-mod t10_file;
-mod t11_json;
-mod t12_toml;
-mod t13_async;
-mod t14_log;
-mod t15_yaml;
-mod t17_trait;
-mod t18_iron;
-mod t19_generic;
-mod t20_enum;
-mod t21_other;
-mod t22_err;
-mod test1;
-mod tokio_demo;
-
-mod a;
-mod aa;
-mod b;
-mod macro_test;
-
 use std::path::PathBuf;
 use structopt::StructOpt;
 
@@ -48,22 +10,20 @@ struct Opt {
     // argument will be, by default, based on the name of the field.
     /// Activate debug mode
     #[structopt(short, long)]
-    debug: Option<bool>,
+    debug: bool,
 
     // The number of occurrences of the `v/verbose` flag
     /// Verbose mode (-v, -vv, -vvv, etc.)
-    #[structopt(short, long)]
-    verbose: Option<u8>,
+    #[structopt(short, long, parse(from_occurrences))]
+    verbose: u8,
 
     /// Set speed
-    // #[structopt(short, long, default_value = "42")]
-    #[structopt(short, long)]
-    speed: Option<f64>,
+    #[structopt(short, long, default_value = "42")]
+    speed: f64,
 
     /// Output file
-    // #[structopt(short, long, parse(from_os_str))]
-    #[structopt(short, long)]
-    output: Option<PathBuf>,
+    #[structopt(short, long, parse(from_os_str))]
+    output: PathBuf,
 
     // the long option will be translated by default to kebab case,
     // i.e. `--nb-cars`.
@@ -80,8 +40,8 @@ struct Opt {
     files: Vec<PathBuf>,
 }
 
-// use std::thread::{park_timeout, sleep};
-fn main() {
+#[test]
+fn struct_opt_1() {
     let opt = Opt::from_args();
-    println!("{:?}", opt);
+    println!("{:#?}", opt);
 }
