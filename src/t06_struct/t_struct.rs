@@ -12,6 +12,7 @@ fn test_struct() {
             id: 1,
             name: String::from("no-name"),
             age,
+            list: Vec::new(),
         };
         println!("bean.id: {} ", bean.id);
         println!("bean.to_string(): {} ", bean.to_string());
@@ -24,11 +25,9 @@ fn test_struct() {
             id: 1,
             name: String::from("no-name"),
             age,
+            list:Vec::new(),
         };
-        let bean1 = Employee {
-            id: 2,
-            ..bean
-        };
+        let bean1 = Employee { id: 2, ..bean };
         println!("bean1.id: {} ", bean1.id);
         println!("bean1.to_string(): {} ", bean1.to_string());
     }
@@ -42,13 +41,13 @@ fn test_struct() {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, Default)]
 struct Employee {
     id: i64,
     name: String,
     age: i64,
+    list: Vec<i64>,
 }
-
 
 impl Employee {
     #[allow(dead_code)]
@@ -58,3 +57,11 @@ impl Employee {
     }
 }
 
+#[test]
+fn struct_a_1() {
+    //---------------------
+    let src = Employee::default();
+    println!("-----------{:?}-----------", src);
+    println!("-----------{}-----------", src.list.len());
+
+}
