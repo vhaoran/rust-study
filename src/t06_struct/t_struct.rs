@@ -25,7 +25,7 @@ fn test_struct() {
             id: 1,
             name: String::from("no-name"),
             age,
-            list:Vec::new(),
+            list: Vec::new(),
         };
         let bean1 = Employee { id: 2, ..bean };
         println!("bean1.id: {} ", bean1.id);
@@ -61,7 +61,6 @@ impl Employee {
 fn struct_a_1() {
     //---------------------
     let src = Employee::default();
-    println!("-----------{:?}-----------", src);
+    println!("-----------{:#?}-----------", src);
     println!("-----------{}-----------", src.list.len());
-
 }

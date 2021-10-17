@@ -1,10 +1,10 @@
+use std::collections::HashSet;
+use std::fmt::{Debug, Formatter};
+use std::hash::{Hash, Hasher};
+
 #[test]
 fn hashset_t_01() {
     // use std::cmp::Ordering;
-    use std::collections::HashSet;
-    use std::fmt::{Debug, Formatter};
-    use std::hash::{Hash, Hasher};
-
     fn func(hss: HashSet<Box<dyn MyTrait>>) {
         let hs = HashSet::new();
         hs.union(&hss);
@@ -31,7 +31,7 @@ fn hashset_t_01() {
         }
 
         fn my_eq(&self, other: &dyn MyTrait) -> bool {
-            println!("----hashset_1.rs-----{}---" ,other.my_hash());
+            println!("----hashset_1.rs-----{}---", other.my_hash());
             true
         }
         fn my_fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
@@ -72,4 +72,44 @@ fn hashset_t_01() {
     }
     //-------------------------------------
     x();
+}
+
+#[test]
+fn hs_2() {
+    //---------------------
+    // struct Data {
+    //     i: i32,
+    //     s: String,
+    // }
+    // //
+    // let mut m: HashSet<Data> = HashSet::new();
+    // m.insert(Data {
+    //     i: 1,
+    //     s: "a".to_string(),
+    // });
+    // m.insert(Data {
+    //     i: 1,
+    //     s: "a".to_string(),
+    // });
+    // m.insert(Data {
+    //     i: 1,
+    //     s: "a2".to_string(),
+    // });
+    //
+    // m.insert(Data {
+    //     i: 2,
+    //     s: "b".to_string(),
+    // });
+    // m.insert(Data {
+    //     i: 2,
+    //     s: "b".to_string(),
+    // });
+    // m.insert(Data {
+    //     i: 2,
+    //     s: "b2".to_string(),
+    // });
+    //
+    // for v in m {
+    //     println!("-----------{:?}-----------", v);
+    // }
 }
