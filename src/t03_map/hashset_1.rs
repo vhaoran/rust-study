@@ -113,3 +113,15 @@ fn hs_2() {
     //     println!("-----------{:?}-----------", v);
     // }
 }
+
+#[test]
+fn v_h_1() {
+    //---------------------
+    let l = vec![1, 2, 3, 3, 3, 1, 2];
+    let h: HashSet<String> = l
+        .iter()
+        .filter(|&&x| x > 1)
+        .map(|&x| format!("{}", x))
+        .collect();
+    println!("-----------{:#?}-----------", h);
+}
