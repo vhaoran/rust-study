@@ -8,7 +8,7 @@ async fn f_1() -> std::result::Result<(), Box<dyn std::error::Error>> {
     tokio::spawn(async move {
         for i in 0..20 {
             tx.send(i).unwrap();
-            println!("-----------aftger send-----------");
+            println!("-----------aftger send------len:-{}----",tx.len());
             tokio::time::sleep(std::time::Duration::from_secs(1)).await;
         }
     });
@@ -19,7 +19,7 @@ async fn f_1() -> std::result::Result<(), Box<dyn std::error::Error>> {
         loop {
             match rx.try_recv() {
                 Ok(i) => {
-                    println!("-#####--receive: {}----", i);
+                    println!("-#####--receive: {}--len: {}--", i,rx.len());
                 }
                 _ => {
                     println!("-*****--receive: error---");
