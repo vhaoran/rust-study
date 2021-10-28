@@ -64,3 +64,27 @@ async fn tk_52() -> Result<(), Box<dyn std::error::Error>> {
     .await;
     Ok(())
 }
+
+#[tokio::test]
+async fn t_panic_1() -> Result<(), Box<dyn std::error::Error>> {
+    tokio::spawn(async move {
+        for i in 0..100 {
+            println!("----{}-----", i);
+            tokio::time::sleep(std::time::Duration::from_secs(1)).await;
+            if i > 5 {
+                panic!(" throw panic");
+            }
+        }
+    });
+
+    tokio::spawn(async move {
+        println!("----after sleep-----");
+        for i in 0..10000u32 {
+            tokio::time::sleep(std::time::Duration::from_secs(10)).await;
+            println!("----after sleep-----");
+        }
+    })
+    .await;
+
+    Ok(())
+}
