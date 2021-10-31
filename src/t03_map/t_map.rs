@@ -5,6 +5,7 @@ fn t03() {
 }
 
 use std::collections::HashMap;
+use std::collections::HashSet;
 
 #[allow(dead_code)]
 fn map_demo() {
@@ -39,3 +40,14 @@ fn map_n() {
         println!(" {:?},{:?}", k, v);
     }
 }
+
+#[test]
+fn hs_2() {
+    //---------------------
+    let mut a :HashSet<i32> = HashSet::new();
+    //
+    a.insert(1);
+    a.insert(5);
+    a.insert(7);
+}
+
