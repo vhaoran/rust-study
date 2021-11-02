@@ -44,10 +44,33 @@ fn map_n() {
 #[test]
 fn hs_2() {
     //---------------------
-    let mut a :HashSet<i32> = HashSet::new();
+    let mut a: HashSet<i32> = HashSet::new();
     //
     a.insert(1);
     a.insert(5);
     a.insert(7);
 }
 
+#[test]
+fn take_1() {
+    //---------------------
+    let mut m = HashMap::new();
+    m.insert(1, "1_value");
+    m.insert(2, "2_value");
+    m.insert(3, "3_value");
+
+    let l: Vec<i32> = m.keys().map(|x| x.clone()).collect();
+    let a: Option<(i32, &str)> = {
+        if l.len() > 0 {
+            let k = l.get(0).unwrap().clone();
+            Some((k, m.get(&k).unwrap().clone()))
+        } else {
+            None
+        }
+    };
+    println!("-----------({:?}-----------", a);
+
+    m.remove(&a.unwrap().0);
+
+    println!("-----------m: {:?}-----------", m);
+}
