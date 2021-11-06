@@ -30,30 +30,42 @@ fn slice_test() {
 fn a_str_mult() {
     println!(r#"--b"12上海"-------"#);
     let a = b"12";
-    for i in a.iter(){
-        println!("--------{}-" ,i);
-    };
+    for i in a.iter() {
+        println!("--------{}-", i);
+    }
     //-------------------------------------
     println!(r#"--"12上海"-------"#);
     let a = "12上海";
-    for i in a.as_bytes().iter(){
-        println!("--------{}-" ,i);
+    for i in a.as_bytes().iter() {
+        println!("--------{}-", i);
     }
     //-----------aa--------------------------
     println!(r#"--"12上海"-------"#);
     let a = r"12上海";
-    for i in a.as_bytes().iter(){
-        println!("--------{}-" ,i);
+    for i in a.as_bytes().iter() {
+        println!("--------{}-", i);
     }
     //-----------aa--------------------------
-
-
 }
 
 #[test]
 fn a_bool() {
     //---------------------
     let a: bool = false;
-    println!("----t_slice_str.rs---b---{}--" ,a);
+    println!("----t_slice_str.rs---b---{}--", a);
 }
 
+#[test]
+fn x_str_3() {
+    //---------------------
+    let s = "good".to_string();
+    let l: Vec<_> = s.split(",").collect();
+    println!("-----------{}-----------", s);
+    println!("-----------{:?}-----------", l);
+    println!("-------len:{:?}----{:?}-----------", l.len(), l);
+
+    let s = "good,222,".to_string();
+    let l: Vec<_> = s.split(",").collect();
+    println!("-----------{}-----------", s);
+    println!("-------len:{:?}----{:?}-----------", l.len(), l);
+}
