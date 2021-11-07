@@ -12,3 +12,16 @@ fn enum_1() {
         println!("-----------{},{}-----------", i, j);
     }
 }
+
+#[test]
+fn enum_2() {
+    //---------------------
+    enum Tag {
+        CommonTag,
+    }
+
+    enum CommonTag {
+        Id,
+        Name,
+    }
+}
