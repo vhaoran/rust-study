@@ -33,6 +33,14 @@ fn count_1() {
 #[test]
 fn f_5() {
     use num_format::{Locale, ToFormattedString};
-    let s = 1000000_f64.to_formatted_string(&Locale::en);
+    let s = 1000000.to_formatted_string(&Locale::en);
     println!("-----------{}-----------", s);
+}
+
+#[test]
+fn f_3() {
+    //---------------------
+    println!("-----------{:.2}-----------", 123.456789012);
+    println!("-----------{:.4}-----------", 123.456789012);
+    println!("-----------{:.6}-----------", 123.456789012);
 }
