@@ -12,8 +12,7 @@ fn count_1() {
     let year = 200;
     let i = count_n(base, year, rate);
 
-    println!(" {} ->{} -> {} remain:--> {}",
-             base, year, rate, i);
+    println!(" {} ->{} -> {} remain:--> {}", base, year, rate, i);
     println!("count: {}", i);
     println!("----------------------");
 
@@ -30,3 +29,10 @@ fn count_1() {
     }
 }
 //----------------------------------------
+
+#[test]
+fn f_5() {
+    use num_format::{Locale, ToFormattedString};
+    let s = 1000000_f64.to_formatted_string(&Locale::en);
+    println!("-----------{}-----------", s);
+}
