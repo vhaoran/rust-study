@@ -26,6 +26,8 @@ fn it_1() {
     a.iter().for_each(|x| println!("v: {:?}", x.clone()));
     println!("----------------------\n\n");
     let r = a.iter().find(|x| &x.id == &3);
+
+    // let r = a.iter().contains();
     println!("-----------r {:?}-----------", r);
     let r = a.iter().any(|x| &x.id == &4);
     println!("-----------r {:?}-----------", r);
@@ -35,7 +37,9 @@ fn it_1() {
 fn v_m_1() {
     //---------------------
     let src = vec![1, 2, 3];
-    let l:Vec<_> = src.iter().map(|x| x + 10).collect();
-
+    let l: Vec<_> = src.iter().map(|x| x + 10).collect();
     println!("-----------{:#?}-----------", l);
+
+    let b = src.iter().find(|&a| a == &2).is_some();
+    println!("-----------{:?}-----------", b);
 }
