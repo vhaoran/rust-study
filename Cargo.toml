@@ -67,3 +67,5 @@ crossbeam-channel = "^0.5"
 clap = "^2.33"
 structopt = "0.3.23"
 
+#======================
+reqwest = { version = "0.11", features = ["default-tls","stream","multipart","json","cookies","gzip","deflate"] }
