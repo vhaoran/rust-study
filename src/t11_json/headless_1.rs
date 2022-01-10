@@ -6,12 +6,13 @@ async fn head_1() -> Result<(), Box<dyn std::error::Error>> {
     let tab = browser.wait_for_initial_tab()?;
 
     /// Navigate to wikipedia
-    tab.navigate_to("https://www.wikipedia.org")?;
+    tab.navigate_to("http://www.zgei.com/")?;
     println!("-----------after after navigate-----------");
 
     /// Wait for network/javascript/dom to make the search-box available
     /// and click it.
-    tab.wait_for_element("input#searchInput")?.click()?;
+    // tab.wait_for_element("input#searchInput")?.click()?;
+    tab.wait_for_element("button#j-submit")?.click()?;
 
     /// Type in a query and press `Enter`
     tab.type_str("WebKit")?.press_key("Enter")?;
