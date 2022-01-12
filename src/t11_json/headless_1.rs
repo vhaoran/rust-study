@@ -1,8 +1,13 @@
+use headless_chrome::LaunchOptionsBuilder;
 use headless_chrome::{protocol::page::ScreenshotFormat, Browser};
 
 #[tokio::test]
-async fn head_1() -> Result<(), Box<dyn std::error::Error>> {
-    let browser = Browser::default()?;
+async fn hl_1() -> Result<(), Box<dyn std::error::Error>> {
+    println!("--------before---start-----------");
+    let opt = LaunchOptionsBuilder::default().headless(true).build()?;
+    let browser = Browser::new(opt)?;
+    println!("-----------a-----------");
+
     let tab = browser.wait_for_initial_tab()?;
 
     /// Navigate to wikipedia
@@ -12,27 +17,23 @@ async fn head_1() -> Result<(), Box<dyn std::error::Error>> {
     /// Wait for network/javascript/dom to make the search-box available
     /// and click it.
     // tab.wait_for_element("input#searchInput")?.click()?;
-    tab.wait_for_element("button#j-submit")?.click()?;
+    tab.wait_for_element("#j-input")?;
+    tab.type_str("似水流年")?;
 
-    /// Type in a query and press `Enter`
-    tab.type_str("WebKit")?.press_key("Enter")?;
-    println!("-----------3-----------");
+    tab.wait_for_element("#j-submit")?;
+    println!("---after show j-submit-----");
+
+    tab.find_element("button#j-submit")?.click()?;
+    println!("----after click <j-submit>-----");
 
     /// We should end up on the WebKit-page once navigated
-    tab.wait_for_element("#firstHeading")?;
-    // assert!(tab.get_url().ends_with("WebKit"));
-    println!("-----------3-----------");
+    // let r = tab.wait_until_navigated()?;
+    let r = tab.wait_for_element("#j-lrc")?;
+    let s = r.get_attributes()?;
 
-    /// Take a screenshot of the entire browser window
-    let _jpeg_data = tab.capture_screenshot(ScreenshotFormat::JPEG(Some(75)), None, true)?;
-    println!("-----------4-----------");
-
-    /// Take a screenshot of just the WebKit-Infobox
-    let _png_data = tab
-        .wait_for_element("#mw-content-text > div > table.infobox.vevent")?
-        .capture_screenshot(ScreenshotFormat::PNG)?;
-    //
-    println!("-----------end-----------");
+    println!("-------lrc:----{:#?}-----------", r);
+    println!("-----------after query-----------");
+    tokio::time::sleep(std::time::Duration::from_secs(20)).await;
 
     Ok(())
 }
