@@ -71,7 +71,7 @@ futures = "^0.3"
 pretty_env_logger = "0.4.0"
 
 #======================
-#reqwest = { version = "0.11", features = ["default-tls","stream","multipart","json","cookies","gzip","deflate"] }
+reqwest = { version = "0.11", features = ["default-tls","stream","multipart","json","cookies","gzip","deflate"] }
 headless_chrome= {version ="^0.9",features = ["default","fetch"]}
 #chromiumoxide = {git = "https://github.com/mattsse/chromiumoxide", features = ["tokio-runtime"], default-features = false, branch = "main"}
 chromiumoxide = {version = "^0.3.4", features = ["tokio-runtime"], default-features = false}
