@@ -16,7 +16,7 @@ async fn hl_1() -> Result<(), Box<dyn std::error::Error>> {
         "http://www.kuwo.cn/search/list?key=%E5%90%AC%E9%97%BB%E8%BF%9C%E6%96%B9%E6%9C%89%E4%BD%A0";
     let r = tab.navigate_to(url)?;
     println!("-----------after after navigate-----------");
-    println!("-----------{:#?}-----------",r);
+    // println!("-----------{:#?}-----------",r);
 
 
     /// Wait for network/javascript/dom to make the search-box available

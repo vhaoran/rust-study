@@ -125,3 +125,15 @@ fn aaa() {
     let (a, b): (&str, &str) = ("aaa", "bb");
     println!("-----------{},{}-----------", a, b);
 }
+
+#[test]
+fn fold_33() {
+    let result = (1..5).map(|a| format!("{a}")).fold("".to_string(), |a, b| {
+        if a.len() == 0 {
+            format!("{b}")
+        } else {
+            format!("{}/{}", a, b)
+        }
+    });
+    println!("result = {:#?}", result);
+}
