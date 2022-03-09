@@ -48,7 +48,20 @@ fn v_m_1() {
 fn ita_1() {
     //---------------------
     let a = vec![1, 3, 7, 10, 28, 40];
-
     println!("-----------{:?}-----------", a.iter().find(|&&x| x == 3));
+    //
+    let slice = ['r', 'u', 's', 't'];
+    let mut iter = slice.windows(2);
 
+    let a = iter.next().unwrap();
+    println!("-----------{:?}-----------", a);
+
+    let a = iter.next().unwrap();
+    println!("-----------{:?}-----------", a);
+
+    let a = iter.next().unwrap();
+    println!("-----------{:?}-----------", a);
+    //-------------------------------------
+    let slice = ['r', 'u', 's', 't'];
+    //
 }
