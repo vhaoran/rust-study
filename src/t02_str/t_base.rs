@@ -169,3 +169,15 @@ fn split_1() {
         println!("------0:--{}--------------", l[0]);
     }
 }
+
+#[test]
+fn hashmap_2() {
+    //---------------------
+    let mut m: HashMap<i64, i64> = HashMap::new();
+    m.insert(1, 1);
+    m.insert(1, 2);
+    m.insert(1, 3);
+    for (k, v) in m {
+        println!("-----------{k}:  {v}-----------");
+    }
+}
