@@ -28,6 +28,7 @@ mod t19_generic;
 mod t20_enum;
 mod t21_other;
 mod t22_err;
+mod t23_trait;
 mod test1;
 mod tokio_demo;
 
@@ -35,7 +36,6 @@ mod a;
 mod aa;
 mod b;
 mod macro_test;
-
 
 #[macro_use]
 extern crate lazy_static;
