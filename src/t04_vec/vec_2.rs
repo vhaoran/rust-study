@@ -57,10 +57,32 @@ fn v_8() {
 
     let i = 1;
     let r = l.remove(0);
-    println!("-----------0: {:?}--/{:?}---------", r,l);
+    println!("-----------0: {:?}--/{:?}---------", r, l);
     let r = l.remove(0);
-    println!("-----------0: {:?}--/{:?}---------", r,l);
+    println!("-----------0: {:?}--/{:?}---------", r, l);
     let r = l.remove(0);
-    println!("-----------0: {:?}--/{:?}---------", r,l);
+    println!("-----------0: {:?}--/{:?}---------", r, l);
 }
 
+#[test]
+fn split_1() {
+    //---------------------
+    let mut text = "aaa***tail\n222\n333\n".to_string();
+    for i in 0..5 {
+        text = text.replace("**", "*").to_string();
+    }
+
+    let l: Vec<&str> = text.split("\n").collect();
+    if l.len() == 0 {
+        return;
+    }
+    //
+    let s = l.get(0).unwrap();
+    let l: Vec<_> = s.split("*").collect();
+    if l.len() < 2 {
+        return;
+    }
+    let head = l.get(0).unwrap().clone();
+    let tail = l.get(1).unwrap().clone().replace("*", "");
+    println!("-----------{head} {tail}-----------");
+}

@@ -60,3 +60,4 @@ fn cache_t_1() {
         println!("-******---keyed_2-{}----", keyed2(s1.as_str(), s2.as_str()));
     }
 }
+

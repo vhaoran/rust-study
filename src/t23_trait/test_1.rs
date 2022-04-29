@@ -12,8 +12,6 @@ pub struct Xa {
     pub name: String,
 }
 
-impl X for Xa {}
-
 #[test]
 fn a_1() {
     //---------------------
@@ -21,6 +19,4 @@ fn a_1() {
         id: "id".to_string(),
         name: "name".to_string(),
     };
-
-    println!("-----------{}-----------", src.my_name());
 }
