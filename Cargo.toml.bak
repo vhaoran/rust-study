@@ -58,7 +58,7 @@ num-format = "0.4.0"
 
 chrono = "^0.4.19"
 # dead-pool
-#deadpool = "0.7.0"
+"#deadpool" = "0.7.0"
 
 ajson = "^0.2"
 
